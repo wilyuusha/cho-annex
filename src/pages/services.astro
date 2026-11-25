@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmptyState from '../components/EmptyState.astro';
+import EntryCard from '../components/EntryCard.astro';
+import LastUpdated from '../components/LastUpdated.astro';
+import servicesData from '../data/services.json';
+import type { ServicesData } from '../data/types';
+
+const services = servicesData as ServicesData;
+---
+
+<BaseLayout
+  title="Services"
+  description="Published health services and requirements at the City Health Office Annex."
+>
+  <header class="page-header">
+    <p class="eyebrow">What we offer</p>
+    <h1>Services</h1>
+    <p class="lead">
+      Available services and their requirements. Service details are subject to change, so check the latest announcements before your visit.
+    </p>
+    <LastUpdated updated={services.lastUpdated} />
+  </header>
+
+  {
+    services.services.length > 0 ? (
+      <section class="section" aria-labelledby="services-heading">
+        <div class="section__header">
+          <div>
+            <h2 id="services-heading">Available services</h2>
+          </div>
+        </div>
+        <div class="card-grid">
+          {services.services.map((service) => (
+            <EntryCard
+              title={service.name}
+              meta={
+                service.availability
+                  ? [{ label: 'Availability', value: service.availability }]
+                  : []
+              }
+              details={[
+                ...(service.description ? [service.description] : []),
+                ...(service.requirements ?? []).map((item) => `Requirement: ${item}`),
+                ...(service.notes ?? []),
+              ]}
+              updated={service.updated}
+            />
+          ))}
+        </div>
+      </section>
+    ) : (
+      <EmptyState
+        title="No services published yet"
+        message="Verified services and requirements will appear here once available."
+      />
+    )
+  }
+</BaseLayout>

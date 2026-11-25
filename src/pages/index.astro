@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmptyState from '../components/EmptyState.astro';
+import EntryCard from '../components/EntryCard.astro';
+import LastUpdated from '../components/LastUpdated.astro';
+import announcementsData from '../data/announcements.json';
+import schedulesData from '../data/schedules.json';
+import site from '../data/site.json';
+import type { AnnouncementsData, SchedulesData } from '../data/types';
+
+const announcements = announcementsData as AnnouncementsData;
+const schedules = schedulesData as SchedulesData;
+
+const base = import.meta.env.BASE_URL;
+const hrefFor = (slug: string) => `${base}${slug.replace(/^\//, '')}/`;
+
+const quickLinks = [
+  { slug: 'schedules', title: 'Schedules', description: 'ABTC, YAKAP, service availability, and operating hours.' },
+  { slug: 'visits', title: 'Visits', description: 'Barangay visits, outreach programs, and community activities.' },
+  { slug: 'services', title: 'Services', description: 'Available services and their requirements.' },
+  { slug: 'directory', title: 'Directory', description: 'Building layout, room locations, and visitor directions.' },
+  { slug: 'announcements', title: 'Announcements', description: 'Public advisories and temporary schedule changes.' },
+];
+
+const latestAnnouncements = [...announcements.entries]
+  .sort((a, b) => b.published.localeCompare(a.published))
+  .slice(0, 3);
+---
+
+<BaseLayout title="Home">
+  <header class="page-header">
+    <p class="eyebrow">Public information portal</p>
+    <h1>{site.name}</h1>
+    <p class="lead">{site.description}</p>
+  </header>
+
+  <section class="section" aria-labelledby="explore-heading">
+    <div class="section__header">
+      <div>
+        <h2 id="explore-heading">Explore information</h2>
+        <p>Choose a topic to see what has been published.</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      {
+        quickLinks.map((link) => (
+          <a class="card card-link" href={hrefFor(link.slug)}>
+            <h3 class="card__title">{link.title}</h3>
+            <p>{link.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="updates-heading">
+    <div class="section__header">
+      <div>
+        <h2 id="updates-heading">Latest announcements</h2>
+        <p>Advisories and temporary changes appear here first.</p>
+      </div>
+      <LastUpdated updated={announcements.lastUpdated} />
+    </div>
+    {
+      latestAnnouncements.length > 0 ? (
+        <div class="card-grid">
+          {latestAnnouncements.map((entry) => (
+            <EntryCard
+              title={entry.title}
+              badge={entry.category}
+              badgeTone="accent"
+              meta={[
+                { label: 'Published', value: entry.published },
+                ...(entry.until ? [{ label: 'Until', value: entry.until }] : []),
+              ]}
+              details={[entry.body]}
+              updated={entry.updated}
+            />
+          ))}
+        </div>
+      ) : (
+        <EmptyState
+          title="No announcements published yet"
+          message="Verified advisories and temporary changes will appear here once available."
+        />
+      )
+    }
+  </section>
+
+  <section class="section" aria-labelledby="hours-heading">
+    <div class="section__header">
+      <div>
+        <h2 id="hours-heading">Operating hours</h2>
+        <p>Regular office hours, not temporary schedules.</p>
+      </div>
+      <LastUpdated updated={schedules.lastUpdated} />
+    </div>
+    {
+      schedules.regularHours.length > 0 ? (
+        <div class="card-grid">
+          {schedules.regularHours.map((entry) => (
+            <EntryCard
+              title={entry.title}
+              meta={[{ label: 'When', value: entry.when || 'To be confirmed' }]}
+              details={entry.notes ?? []}
+              updated={entry.updated}
+            />
+          ))}
+        </div>
+      ) : (
+        <EmptyState
+          title="No verified hours published yet"
+          message="Regular operating hours will appear here after they are confirmed."
+        />
+      )
+    }
+    <p><a href={hrefFor('schedules')}>View all schedules</a></p>
+  </section>
+</BaseLayout>

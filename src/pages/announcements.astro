@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmptyState from '../components/EmptyState.astro';
+import EntryCard from '../components/EntryCard.astro';
+import LastUpdated from '../components/LastUpdated.astro';
+import announcementsData from '../data/announcements.json';
+import type { AnnouncementsData } from '../data/types';
+
+const announcements = announcementsData as AnnouncementsData;
+
+const entries = [...announcements.entries].sort((a, b) => b.published.localeCompare(a.published));
+---
+
+<BaseLayout
+  title="Announcements"
+  description="Public advisories and temporary schedule changes from the City Health Office Annex."
+>
+  <header class="page-header">
+    <p class="eyebrow">Stay informed</p>
+    <h1>Announcements</h1>
+    <p class="lead">
+      Public advisories and temporary changes. Check this page for updates that override regular schedules.
+    </p>
+    <LastUpdated updated={announcements.lastUpdated} />
+  </header>
+
+  {
+    entries.length > 0 ? (
+      <section class="section" aria-labelledby="announcements-heading">
+        <div class="section__header">
+          <div>
+            <h2 id="announcements-heading">Current and recent notices</h2>
+          </div>
+        </div>
+        <div class="card-grid">
+          {entries.map((entry) => (
+            <EntryCard
+              title={entry.title}
+              badge={entry.category}
+              badgeTone="accent"
+              meta={[
+                { label: 'Published', value: entry.published },
+                ...(entry.until ? [{ label: 'Until', value: entry.until }] : []),
+              ]}
+              details={[entry.body]}
+              updated={entry.updated}
+            />
+          ))}
+        </div>
+      </section>
+    ) : (
+      <EmptyState
+        title="No announcements published yet"
+        message="Verified advisories and temporary schedule changes will appear here once available."
+      />
+    )
+  }
+</BaseLayout>

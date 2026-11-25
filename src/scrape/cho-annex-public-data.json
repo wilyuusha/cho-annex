@@ -1,0 +1,248 @@
+{
+  "metadata": {
+    "project": "CHO Annex Public Information Website",
+    "city": "Valencia City",
+    "province": "Bukidnon",
+    "country": "Philippines",
+    "generated_on": "2026-11-25",
+    "description": "Publicly discoverable information collected for initial website content. Verify with CHO staff before treating it as official or guaranteed.",
+    "timezone": "Asia/Manila",
+    "display_rule": "Do not publish records marked historical_reference_only as current schedules. Keep source attribution and last_verified fields."
+  },
+  "schedules": [
+    {
+      "id": "tb-dots-fortich-2026",
+      "service": "CHO TB-DOTS Center",
+      "facility": "CHO Annex / Old German Doctors Building",
+      "address": "Fortich Street, Poblacion, Valencia City, Bukidnon, Philippines",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "start_time": "08:00",
+      "end_time": "17:00",
+      "effective_from": "2026-10-26",
+      "status": "reported_current_needs_confirmation",
+      "notes": "CHO notice says the TB-DOTS Center transferred from the New Terminal Complex to Fortich Street (Old German Doctors), effective October 26, 2026. Posted clinic hours: Monday to Friday, 8:00 AM to 5:00 PM.",
+      "source": {
+        "title": "Valencia City Health Office public notice: TB-DOTS Center transfer",
+        "publisher": "Valencia City Health Office; notice reproduced on GovServ",
+        "date_published": "2026-10-27",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      },
+      "last_verified": null
+    },
+    {
+      "id": "cho-main-office-hours",
+      "service": "City Health Office general office hours",
+      "facility": "Valencia City Health Office",
+      "address": null,
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "start_time": "08:00",
+      "end_time": "17:00",
+      "status": "reported_hours_needs_annex_confirmation",
+      "notes": "The public directory page lists the CHO as open Monday to Friday, 8:00 AM to 5:00 PM. This is not proof that every service or room in the Annex follows these hours.",
+      "source": {
+        "title": "Valencia City Health Office directory page",
+        "publisher": "GovServ directory page",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      },
+      "last_verified": null
+    },
+    {
+      "id": "opd-schedule-citizens-charter-2024",
+      "service": "Outpatient consultation (OPD)",
+      "facility": "City Health Office",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Friday"
+      ],
+      "start_time": "08:00",
+      "end_time": "17:00",
+      "additional_sessions": [
+        {
+          "days": [
+            "Wednesday",
+            "Thursday"
+          ],
+          "start_time": "13:00",
+          "end_time": "17:00"
+        }
+      ],
+      "status": "historical_reference_only",
+      "notes": "Copied from the 2024 Citizen's Charter. Do not show as current until CHO confirms it still applies and that it is offered at the Annex.",
+      "source": {
+        "title": "Valencia City Citizen's Charter 2024, Book II (copy hosted on Scribd)",
+        "date_published": "2024",
+        "url": "https://www.scribd.com/document/785651330/Lgu-Valencia-City-Citizens-Charter-2024-Bookii"
+      },
+      "last_verified": null
+    },
+    {
+      "id": "tb-medicine-schedule-citizens-charter-2024",
+      "service": "Anti-tuberculosis drugs / TB-DOTS follow-up service",
+      "facility": "City Health Office",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Thursday",
+        "Friday"
+      ],
+      "start_time": "08:00",
+      "end_time": "17:00",
+      "status": "historical_reference_only",
+      "notes": "The 2024 Citizen's Charter lists these days and hours. May not reflect the service's current location or schedule after the October 2026 transfer.",
+      "source": {
+        "title": "Valencia City Citizen's Charter 2024, Book II (copy hosted on Scribd)",
+        "date_published": "2024",
+        "url": "https://www.scribd.com/document/785651330/Lgu-Valencia-City-Citizens-Charter-2024-Bookii"
+      },
+      "last_verified": null
+    }
+  ],
+  "announcements": [
+    {
+      "id": "tb-dots-transfer-2026-10-26",
+      "title": "CHO TB-DOTS Center transferred to Fortich Street",
+      "date_published": "2026-10-27",
+      "effective_date": "2026-10-26",
+      "category": "service_location_change",
+      "summary": "The CHO announced that its TB-DOTS Center moved from the New Terminal Complex to Fortich Street, Poblacion, Valencia City (Old German Doctors). The notice lists clinic hours as Monday to Friday, 8:00 AM to 5:00 PM.",
+      "status": "location_change_in_effect",
+      "source_url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+    }
+  ],
+  "activities": [
+    {
+      "id": "bloodletting-barobo-2026-10-27",
+      "title": "Bloodletting Activity",
+      "activity_date": "2026-10-27",
+      "barangay": "Barobo",
+      "venue": "Barobo Covered Court, Valencia City",
+      "category": "community_health_activity",
+      "status": "past_activity",
+      "notes": "CHO and Provincial Health Office activity; public post reported 40 blood donors.",
+      "source_url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+    },
+    {
+      "id": "hemsteam-guinoyuran-2026-10-21",
+      "title": "HEMS medical standby for boxing event",
+      "activity_date": "2026-10-21",
+      "barangay": "Guinoyuran",
+      "venue": null,
+      "category": "event_medical_standby",
+      "status": "past_activity",
+      "source_url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+    },
+    {
+      "id": "purokalusugan-lilingayon-2026-10-22",
+      "title": "PuroKalusugan Job Guide Roll-out, IPCC and BHW monitoring",
+      "activity_date": "2026-10-22",
+      "barangay": "Lilingayon",
+      "venue": null,
+      "category": "barangay_outreach",
+      "status": "past_activity",
+      "notes": "Public post describes a community activity and BHW capacity-building sessions; no recurring schedule was published.",
+      "source_url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+    },
+    {
+      "id": "school-immunization-cabanbanagan-2026-10-23",
+      "title": "School-based immunization orientation",
+      "activity_date": "2026-10-23",
+      "venue": "Cabanbanagan Integrated School",
+      "category": "school_health_activity",
+      "status": "past_activity",
+      "notes": "Orientation covered the School-Based Immunization program; no recurring clinic timetable was published.",
+      "source_url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+    }
+  ],
+  "facilities_and_contacts": [
+    {
+      "id": "city-health-office",
+      "name": "City Health Office",
+      "email": "chovalenciacitybukidnon@gmail.com",
+      "address": null,
+      "phone": null,
+      "notes": "Email listed in the official City of Valencia Departments and Offices directory. Confirm the correct public contact for Annex inquiries before publishing.",
+      "source": {
+        "title": "City of Valencia - Departments and Offices",
+        "url": "https://cityofvalencia.gov.ph/departments-and-offices/",
+        "source_type": "official_city_government_website"
+      },
+      "last_verified": null
+    },
+    {
+      "id": "valencia-municipal-health-office-yakap",
+      "name": "Valencia Municipal Health Office",
+      "address": "Poblacion Occidental, Valencia City, Bukidnon, Philippines",
+      "phone": "(038) 532-1687",
+      "email": "mhovalencia@gmail.com",
+      "category": "YAKAP_accredited_facility_listing",
+      "status": "directory_record_not_a_schedule",
+      "notes": "Listed in a publicly indexed 2026 YAKAP clinic list updated May 31, 2026. This does not prove it is the CHO Annex or provide service hours. Verify details with CHO.",
+      "source": {
+        "title": "List of Accredited YAKAP Clinics for CY 2026, updated May 31, 2026 (copy hosted on Scribd)",
+        "url": "https://www.scribd.com/document/1057636009/YAKAP-1"
+      },
+      "last_verified": null
+    }
+  ],
+  "not_found_or_unverified": [
+    {
+      "item": "ABTC weekly clinic schedule at CHO Annex",
+      "value": null,
+      "reason": "No reliable current weekly timetable found in the sources reviewed."
+    },
+    {
+      "item": "YAKAP registration or consultation schedule at CHO Annex",
+      "value": null,
+      "reason": "A YAKAP provider directory was found, but it does not provide a current Annex clinic timetable."
+    },
+    {
+      "item": "Upcoming barangay/YAKAP outreach calendar",
+      "value": null,
+      "reason": "Posts found describe completed activities, not a forward-looking schedule."
+    },
+    {
+      "item": "Room-by-room directory or floor assignments inside the Annex",
+      "value": null,
+      "reason": "No verified public room directory found."
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-cho-page",
+      "title": "Valencia City Health Office public page / notices",
+      "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office",
+      "relevance": "TB-DOTS transfer, clinic hours, and completed community activities."
+    },
+    {
+      "id": "source-city-directory",
+      "title": "City of Valencia - Departments and Offices",
+      "url": "https://cityofvalencia.gov.ph/departments-and-offices/",
+      "relevance": "Official City Health Office email contact."
+    },
+    {
+      "id": "source-citizens-charter-2024",
+      "title": "Valencia City Citizen's Charter 2024, Book II (copy hosted on Scribd)",
+      "url": "https://www.scribd.com/document/785651330/Lgu-Valencia-City-Citizens-Charter-2024-Bookii",
+      "relevance": "Older service schedules; historical reference only until confirmed."
+    },
+    {
+      "id": "source-yakap-2026",
+      "title": "List of Accredited YAKAP Clinics for CY 2026, updated May 31, 2026 (copy hosted on Scribd)",
+      "url": "https://www.scribd.com/document/1057636009/YAKAP-1",
+      "relevance": "YAKAP provider directory information for Valencia; not a schedule."
+    }
+  ]
+}

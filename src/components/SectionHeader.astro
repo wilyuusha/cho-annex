@@ -1,0 +1,20 @@
+---
+import LastUpdated from './LastUpdated.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  updated?: string | null;
+  id?: string;
+}
+
+const { title, description, updated = null, id } = Astro.props;
+---
+
+<div class="section__header">
+  <div>
+    <h2 id={id}>{title}</h2>
+    {description && <p>{description}</p>}
+  </div>
+  <LastUpdated updated={updated} />
+</div>

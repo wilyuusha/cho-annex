@@ -1,0 +1,55 @@
+---
+import LastUpdated from './LastUpdated.astro';
+
+interface MetaItem {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  title: string;
+  meta?: MetaItem[];
+  details?: string[];
+  badge?: string;
+  badgeTone?: 'green' | 'accent';
+  updated?: string | null;
+}
+
+const {
+  title,
+  meta = [],
+  details = [],
+  badge,
+  badgeTone = 'green',
+  updated = null,
+} = Astro.props;
+---
+
+<article class="card">
+  {badge && <div class="card__meta"><span class={`badge badge--${badgeTone}`}>{badge}</span></div>}
+
+  <h3 class="card__title">{title}</h3>
+
+  {
+    meta.length > 0 && (
+      <dl class="detail-list">
+        {meta.map((item) => (
+          <div class="detail-list__item">
+            <dt>{item.label}</dt>
+            <dd>{item.value}</dd>
+          </div>
+        ))}
+      </dl>
+    )
+  }
+
+  {
+    details.length > 0 && (
+      <ul>
+        {details.map((detail) => <li>{detail}</li>)}
+      </ul>
+    )
+  }
+
+  <LastUpdated updated={updated} />
+</article>
