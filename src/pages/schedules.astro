@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EmptyState from '../components/EmptyState.astro';
 import EntryCard from '../components/EntryCard.astro';
+import Icon from '../components/Icon.astro';
 import LastUpdated from '../components/LastUpdated.astro';
 import schedulesData from '../data/schedules.json';
 import type { SchedulesData } from '../data/types';
@@ -54,8 +55,9 @@ const sections = [
   </header>
 
   <div class="notice" role="note">
+    <p class="notice__title"><Icon name="info" size={16} /> Regular vs. temporary</p>
     <p>
-      <strong>Regular vs. temporary:</strong> the sections below describe routine schedules. Temporary changes are posted on the <a href={`${import.meta.env.BASE_URL}announcements/`}>announcements page</a>.
+      The sections below describe routine schedules. Temporary changes are posted on the <a href={`${import.meta.env.BASE_URL}announcements/`}>announcements page</a>.
     </p>
   </div>
 
@@ -80,6 +82,7 @@ const sections = [
                     ...(entry.effectiveDate ? [{ label: 'Effective', value: entry.effectiveDate }] : []),
                   ]}
                   details={entry.notes ?? []}
+                  source={entry.source}
                   updated={entry.updated}
                 />
               ))}

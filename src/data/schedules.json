@@ -1,7 +1,36 @@
 {
-  "lastUpdated": null,
-  "regularHours": [],
+  "lastUpdated": "2026-11-25",
+  "regularHours": [
+    {
+      "title": "City Health Office general office hours",
+      "when": "Monday to Friday, 8:00 AM – 5:00 PM",
+      "effectiveDate": null,
+      "notes": [
+        "Public directory hours for the City Health Office. Annex-specific service hours are not separately published."
+      ],
+      "source": {
+        "title": "Valencia City Health Office directory page",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      },
+      "updated": "2026-11-25"
+    }
+  ],
   "abtc": [],
   "yakap": [],
-  "serviceAvailability": []
+  "serviceAvailability": [
+    {
+      "title": "CHO TB-DOTS Center",
+      "when": "Monday to Friday, 8:00 AM – 5:00 PM",
+      "effectiveDate": "2026-10-26",
+      "notes": [
+        "Located at Fortich Street, Poblacion, Valencia City (Old German Doctors Building).",
+        "Transferred from the New Terminal Complex effective October 26, 2026."
+      ],
+      "source": {
+        "title": "CHO public notice on TB-DOTS Center transfer",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      },
+      "updated": "2026-10-27"
+    }
+  ]
 }

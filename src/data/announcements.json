@@ -1,4 +1,18 @@
 {
-  "lastUpdated": null,
-  "entries": []
+  "lastUpdated": "2026-11-25",
+  "entries": [
+    {
+      "title": "CHO TB-DOTS Center transferred to Fortich Street",
+      "body": "The TB-DOTS Center moved from the New Terminal Complex to Fortich Street, Poblacion, Valencia City (Old German Doctors Building). Posted clinic hours are Monday to Friday, 8:00 AM to 5:00 PM.",
+      "category": "Service location change",
+      "published": "2026-10-27",
+      "until": null,
+      "notes": ["Effective October 26, 2026."],
+      "source": {
+        "title": "CHO public notice reproduced on GovServ",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      },
+      "updated": "2026-10-27"
+    }
+  ]
 }

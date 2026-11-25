@@ -37,7 +37,6 @@ const entries = [...visits.entries].sort((a, b) => b.date.localeCompare(a.date))
             <EntryCard
               title={entry.title}
               badge={entry.status || 'Activity'}
-              badgeTone="accent"
               meta={[
                 { label: 'Date', value: entry.date },
                 ...(entry.time ? [{ label: 'Time', value: entry.time }] : []),
@@ -48,6 +47,7 @@ const entries = [...visits.entries].sort((a, b) => b.date.localeCompare(a.date))
                 ...(entry.summary ? [entry.summary] : []),
                 ...(entry.notes ?? []),
               ]}
+              source={entry.source}
               updated={entry.updated}
             />
           ))}

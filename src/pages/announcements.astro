@@ -37,12 +37,12 @@ const entries = [...announcements.entries].sort((a, b) => b.published.localeComp
             <EntryCard
               title={entry.title}
               badge={entry.category}
-              badgeTone="accent"
               meta={[
                 { label: 'Published', value: entry.published },
                 ...(entry.until ? [{ label: 'Until', value: entry.until }] : []),
               ]}
-              details={[entry.body]}
+              details={[entry.body, ...(entry.notes ?? [])]}
+              source={entry.source}
               updated={entry.updated}
             />
           ))}

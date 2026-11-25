@@ -44,6 +44,7 @@ const services = servicesData as ServicesData;
                 ...(service.requirements ?? []).map((item) => `Requirement: ${item}`),
                 ...(service.notes ?? []),
               ]}
+              source={service.source}
               updated={service.updated}
             />
           ))}

@@ -1,4 +1,61 @@
 {
-  "lastUpdated": null,
-  "entries": []
+  "lastUpdated": "2026-11-25",
+  "entries": [
+    {
+      "title": "Bloodletting Activity",
+      "barangay": "Barobo",
+      "date": "2026-10-27",
+      "activity": "Community health activity",
+      "status": "Completed",
+      "summary": "CHO and Provincial Health Office activity; a public post reported 40 blood donors.",
+      "notes": ["Venue: Barobo Covered Court, Valencia City."],
+      "source": {
+        "title": "CHO public post reproduced on GovServ",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      },
+      "updated": "2026-10-27"
+    },
+    {
+      "title": "School-based immunization orientation",
+      "barangay": "Cabanbanagan",
+      "date": "2026-10-23",
+      "activity": "School health activity",
+      "status": "Completed",
+      "summary": "Orientation on the School-Based Immunization program.",
+      "notes": ["Venue: Cabanbanagan Integrated School."],
+      "source": {
+        "title": "CHO public post reproduced on GovServ",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      },
+      "updated": "2026-10-23"
+    },
+    {
+      "title": "PuroKalusugan Job Guide roll-out, IPCC and BHW monitoring",
+      "barangay": "Lilingayon",
+      "date": "2026-10-22",
+      "activity": "Barangay outreach",
+      "status": "Completed",
+      "summary": "Community activity and BHW capacity-building sessions.",
+      "notes": ["No recurring schedule was published with the notice."],
+      "source": {
+        "title": "CHO public post reproduced on GovServ",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      },
+      "updated": "2026-10-22"
+    },
+    {
+      "title": "HEMS medical standby for boxing event",
+      "barangay": "Guinoyuran",
+      "date": "2026-10-21",
+      "activity": "Event medical standby",
+      "status": "Completed",
+      "summary": "Medical standby for a local boxing event.",
+      "notes": [],
+      "source": {
+        "title": "CHO public post reproduced on GovServ",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      },
+      "updated": "2026-10-21"
+    }
+  ]
 }

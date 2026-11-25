@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 import LastUpdated from './LastUpdated.astro';
 
 interface MetaItem {
@@ -6,12 +7,17 @@ interface MetaItem {
   value: string;
 }
 
+interface SourceItem {
+  title: string;
+  url: string;
+}
+
 interface Props {
   title: string;
   meta?: MetaItem[];
   details?: string[];
   badge?: string;
-  badgeTone?: 'green' | 'accent';
+  source?: SourceItem;
   updated?: string | null;
 }
 
@@ -20,13 +26,13 @@ const {
   meta = [],
   details = [],
   badge,
-  badgeTone = 'green',
+  source,
   updated = null,
 } = Astro.props;
 ---
 
 <article class="card">
-  {badge && <div class="card__meta"><span class={`badge badge--${badgeTone}`}>{badge}</span></div>}
+  {badge && <div class="card__meta"><span class="badge">{badge}</span></div>}
 
   <h3 class="card__title">{title}</h3>
 
@@ -48,6 +54,14 @@ const {
       <ul>
         {details.map((detail) => <li>{detail}</li>)}
       </ul>
+    )
+  }
+
+  {
+    source && (
+      <p class="card__source">
+        Source: <a href={source.url} rel="noopener noreferrer" target="_blank">{source.title}<Icon name="arrowUpRight" size={12} /></a>
+      </p>
     )
   }
 

@@ -1,11 +1,16 @@
 // Shapes for the JSON files in this folder.
-// All fields are optional in practice until verified content is added.
+
+export interface SourceRef {
+  title: string;
+  url: string;
+}
 
 export interface ScheduleEntry {
   title: string;
   when: string;
   effectiveDate?: string | null;
   notes?: string[];
+  source?: SourceRef;
   updated?: string | null;
 }
 
@@ -26,6 +31,7 @@ export interface VisitEntry {
   status?: string;
   summary?: string;
   notes?: string[];
+  source?: SourceRef;
   updated?: string | null;
 }
 
@@ -40,6 +46,7 @@ export interface ServiceEntry {
   availability?: string;
   requirements?: string[];
   notes?: string[];
+  source?: SourceRef;
   updated?: string | null;
 }
 
@@ -54,6 +61,7 @@ export interface RoomEntry {
   location?: string;
   services?: string[];
   notes?: string[];
+  source?: SourceRef;
   updated?: string | null;
 }
 
@@ -69,6 +77,8 @@ export interface AnnouncementEntry {
   category: string;
   published: string;
   until?: string | null;
+  notes?: string[];
+  source?: SourceRef;
   updated?: string | null;
 }
 

@@ -21,11 +21,13 @@ npm run check     # Astro/TypeScript checks
 
 ## Adding information
 
-Content lives in [`src/data`](./src/data/README.md) as JSON. The arrays start empty on purpose: never publish unverified schedules, requirements, room assignments, or advisories. When verified information is available, add it to the relevant JSON file and set the matching `lastUpdated` date.
+Content lives in [`src/data`](./src/data/README.md) as JSON. Initial entries were curated from [`src/scrape/cho-annex-public-data.json`](./src/scrape/cho-annex-public-data.json); each published entry keeps its source link and date. Records the scrape marks as historical or not current were excluded. Never publish unverified schedules, requirements, room assignments, or advisories, and set the matching `lastUpdated` date when information changes.
+
+The City Health Office and Valencia City LGU logos in `src/images/` are rendered through `src/components/LogoPair.astro` in the header and footer.
 
 Pages, layout, and styling live in:
 
-- `src/pages/` — one page per core section plus `404`.
+- `src/pages/` — one page per core section plus `404`. The Visits page is retained but currently hidden from navigation and the home page.
 - `src/layouts/BaseLayout.astro` — shared page shell.
 - `src/components/` — reusable header, footer, cards, notices, and date display.
 - `src/styles/global.css` — Material Design–inspired tokens and shared styles.

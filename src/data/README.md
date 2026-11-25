@@ -2,7 +2,9 @@
 
 All public-facing schedules, services, visits, directory details, and announcements live here as JSON. Presentation stays in `src/components`, `src/layouts`, and `src/pages`.
 
-The arrays are intentionally empty. Do not publish unverified times, requirements, room assignments, or advisories. Add an entry only after the information is confirmed, and set the relevant `lastUpdated` value to an ISO date (`YYYY-MM-DD`).
+Initial content was curated from `src/scrape/cho-annex-public-data.json`. Only public notices, directory listings, and completed public activities were carried over. Records marked `historical_reference_only`, or whose own notes say they are not current, were excluded. Every published entry keeps a `source` link and a date; file-level `lastUpdated` values use the scrape generation date `2026-11-25`.
+
+Do not add unverified times, requirements, room assignments, or advisories. Set dates as ISO strings (`YYYY-MM-DD`).
 
 ## `site.json`
 
@@ -25,6 +27,7 @@ Entry shape:
   "when": "Verified day and time range",
   "effectiveDate": "YYYY-MM-DD",
   "notes": ["Optional verified note"],
+  "source": { "title": "Source title", "url": "https://example.org/source" },
   "updated": "YYYY-MM-DD"
 }
 ```
@@ -45,6 +48,7 @@ Entry shape:
   "status": "Upcoming",
   "summary": "Short verified description",
   "notes": [],
+  "source": { "title": "Source title", "url": "https://example.org/source" },
   "updated": "YYYY-MM-DD"
 }
 ```
@@ -60,6 +64,7 @@ Entry shape:
   "availability": "Verified availability",
   "requirements": ["Verified requirement"],
   "notes": [],
+  "source": { "title": "Source title", "url": "https://example.org/source" },
   "updated": "YYYY-MM-DD"
 }
 ```
@@ -75,6 +80,7 @@ Entry shape:
   "location": "Verified room or area",
   "services": ["Verified service"],
   "notes": [],
+  "source": { "title": "Source title", "url": "https://example.org/source" },
   "updated": "YYYY-MM-DD"
 }
 ```
@@ -90,6 +96,7 @@ Entry shape:
   "category": "Advisory",
   "published": "YYYY-MM-DD",
   "until": "YYYY-MM-DD",
+  "source": { "title": "Source title", "url": "https://example.org/source" },
   "updated": "YYYY-MM-DD"
 }
 ```
