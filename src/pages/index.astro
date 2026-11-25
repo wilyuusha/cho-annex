@@ -42,7 +42,7 @@ const base = import.meta.env.BASE_URL;
 const hrefFor = (slug: string) => `${base}${slug.replace(/^\//, '')}/`;
 
 const quickLinks = [
-  { slug: 'schedules', title: 'Schedules', icon: 'calendar', description: 'ABTC, YAKAP, service availability, and office hours.' },
+  { slug: 'schedules', title: 'Schedules', icon: 'calendar', description: 'Animal Bite Treatment Center (ABTC), YAKAP, service availability, and office hours.' },
   { slug: 'services', title: 'Services', icon: 'heart', description: 'Available services and their requirements.' },
   { slug: 'directory', title: 'Directory', icon: 'building', description: 'Building layout and visitor directions.' },
   { slug: 'announcements', title: 'Announcements', icon: 'megaphone', description: 'Advisories and temporary changes.' },
@@ -57,7 +57,7 @@ const abtcSchedule = schedules.abtc[0];
 const latestAnnouncement = latestAnnouncements[0];
 
 const homeHours = [
-  ...schedules.regularHours.map((entry) => ({ entry, badge: undefined })),
+  ...schedules.regularHours.map((entry) => ({ entry, badge: 'CHO Annex' })),
   ...schedules.abtc.map((entry) => ({ entry, badge: 'ABTC' })),
 ];
 ---
@@ -122,8 +122,8 @@ const homeHours = [
       <div class="hero__hours">
         <span class="hero__hours-label"><Icon name="clock" size={14} /> Operating hours</span>
         <span class="hero__hours-value">{officeHours?.when ?? 'To be confirmed'}</span>
-        <span class="hero__hours-meta">{officeHours ? 'City Health Office general hours' : 'Pending verification'}</span>
-        <span class="hero__hours-extra"><Icon name="calendar" size={13} /> ABTC: {abtcSchedule?.when ?? 'To be confirmed'}</span>
+        <span class="hero__hours-meta">{officeHours ? 'City Health Office — General Office Hours' : 'Pending verification'}</span>
+        <span class="hero__hours-extra"><Icon name="calendar" size={13} /> Animal Bite Treatment Center (ABTC): {abtcSchedule?.when ?? 'To be confirmed'}</span>
       </div>
     </div>
   </section>
@@ -133,10 +133,10 @@ const homeHours = [
       <a class="fact" href={hrefFor('schedules')}>
         <span class="fact__label"><Icon name="clock" size={14} /> Operating hours</span>
         <span class="fact__value">{officeHours?.when ?? 'Hours to be confirmed'}</span>
-        <span class="fact__meta">{officeHours ? 'City Health Office general hours' : 'Pending verification'}</span>
+        <span class="fact__meta">{officeHours ? 'City Health Office — General Office Hours' : 'Pending verification'}</span>
       </a>
       <a class="fact" href={hrefFor('schedules')}>
-        <span class="fact__label"><Icon name="calendar" size={14} /> ABTC schedule</span>
+        <span class="fact__label"><Icon name="calendar" size={14} /> Animal Bite Treatment Center (ABTC)</span>
         <span class="fact__value">{abtcSchedule?.when ?? 'Schedule to be confirmed'}</span>
         <span class="fact__meta">{abtcSchedule ? 'Clinic hours not yet published' : 'Pending verification'}</span>
       </a>
@@ -155,7 +155,7 @@ const homeHours = [
     <section class="section" aria-labelledby="home-hours-heading">
       <div class="section__header">
         <div>
-          <h2 id="home-hours-heading">Operating hours and ABTC</h2>
+          <h2 id="home-hours-heading">Operating hours and Animal Bite Treatment Center (ABTC)</h2>
           <p>Regular office days and confirmed ABTC days.</p>
         </div>
         <LastUpdated updated={schedules.lastUpdated} />

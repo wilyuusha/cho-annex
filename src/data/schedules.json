@@ -2,7 +2,7 @@
   "lastUpdated": "2026-11-25",
   "regularHours": [
     {
-      "title": "City Health Office general office hours",
+      "title": "City Health Office — General Office Hours",
       "when": "Monday to Friday, 8:00 AM – 5:00 PM",
       "effectiveDate": null,
       "notes": [
@@ -17,7 +17,7 @@
   ],
   "abtc": [
     {
-      "title": "ABTC schedule",
+      "title": "Animal Bite Treatment Center (ABTC) Schedule",
       "when": "Tuesday, Wednesday, and Friday",
       "effectiveDate": null,
       "notes": ["Daily clinic hours have not been published."],

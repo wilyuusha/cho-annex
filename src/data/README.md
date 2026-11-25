@@ -15,7 +15,7 @@ Site-wide name, short name, unit label, location, description, public address/co
 Separate arrays keep regular information distinct from temporary activity:
 
 - `regularHours` — routine office hours.
-- `abtc` — ABTC schedules.
+- `abtc` — Animal Bite Treatment Center (ABTC) schedules.
 - `yakap` — YAKAP activities.
 - `serviceAvailability` — days or periods when services are offered.
 
@@ -32,7 +32,7 @@ Entry shape:
 }
 ```
 
-`effectiveDate` and `updated` may be `null` when not applicable. The ABTC days were confirmed by the site maintainer on `2026-11-25`; daily clinic hours have not been published.
+`effectiveDate` and `updated` may be `null` when not applicable. The Animal Bite Treatment Center (ABTC) days were confirmed by the site maintainer on `2026-11-25`; daily clinic hours have not been published.
 
 ## `visits.json`
 
