@@ -8,7 +8,6 @@ import announcementsData from '../data/announcements.json';
 import schedulesData from '../data/schedules.json';
 import site from '../data/site.json';
 import type { AnnouncementsData, SchedulesData } from '../data/types';
-import heroPlaceholder from '../images/hero-placeholder.svg';
 import layoutPlaceholder from '../images/directory-layout-placeholder.svg';
 
 const announcements = announcementsData as AnnouncementsData;
@@ -34,10 +33,6 @@ const latestAnnouncement = latestAnnouncements[0];
 
 <BaseLayout title="Home">
   <section class="hero" aria-labelledby="hero-heading">
-    <div class="hero__media">
-      <img src={heroPlaceholder.src} alt="" aria-hidden="true" width="1600" height="900" />
-      <span class="hero__badge"><Icon name="pin" size={14} /> {site.location}</span>
-    </div>
     <div class="hero__panel">
       <div class="hero__body">
         <p class="eyebrow">Public information portal</p>
@@ -56,115 +51,117 @@ const latestAnnouncement = latestAnnouncements[0];
     </div>
   </section>
 
-  <section class="quick-facts" aria-label="Key information">
-    <a class="fact" href={hrefFor('schedules')}>
-      <span class="fact__label"><Icon name="clock" size={14} /> Operating hours</span>
-      <span class="fact__value">{officeHours?.when ?? 'Hours to be confirmed'}</span>
-      <span class="fact__meta">{officeHours ? 'City Health Office general hours' : 'Pending verification'}</span>
-    </a>
-    <a class="fact" href={hrefFor('announcements')}>
-      <span class="fact__label"><Icon name="megaphone" size={14} /> Latest announcement</span>
-      <span class="fact__value">{latestAnnouncement?.title ?? 'No announcements yet'}</span>
-      <span class="fact__meta">{latestAnnouncement ? `Published ${latestAnnouncement.published}` : 'Pending verification'}</span>
-    </a>
-    <a class="fact" href={hrefFor('directory')}>
-      <span class="fact__label"><Icon name="map" size={14} /> Building layout</span>
-      <span class="fact__value">Directory coming soon</span>
-      <span class="fact__meta">Placeholder shown below</span>
-    </a>
-  </section>
+  <div class="container">
+    <section class="quick-facts" aria-label="Key information">
+      <a class="fact" href={hrefFor('schedules')}>
+        <span class="fact__label"><Icon name="clock" size={14} /> Operating hours</span>
+        <span class="fact__value">{officeHours?.when ?? 'Hours to be confirmed'}</span>
+        <span class="fact__meta">{officeHours ? 'City Health Office general hours' : 'Pending verification'}</span>
+      </a>
+      <a class="fact" href={hrefFor('announcements')}>
+        <span class="fact__label"><Icon name="megaphone" size={14} /> Latest announcement</span>
+        <span class="fact__value">{latestAnnouncement?.title ?? 'No announcements yet'}</span>
+        <span class="fact__meta">{latestAnnouncement ? `Published ${latestAnnouncement.published}` : 'Pending verification'}</span>
+      </a>
+      <a class="fact" href={hrefFor('directory')}>
+        <span class="fact__label"><Icon name="map" size={14} /> Building layout</span>
+        <span class="fact__value">Directory coming soon</span>
+        <span class="fact__meta">Placeholder shown below</span>
+      </a>
+    </section>
 
-  <section class="section" aria-labelledby="home-hours-heading">
-    <div class="section__header">
-      <div>
-        <h2 id="home-hours-heading">Operating hours</h2>
-        <p>Regular office hours, not temporary schedules.</p>
-      </div>
-      <LastUpdated updated={schedules.lastUpdated} />
-    </div>
-    {
-      schedules.regularHours.length > 0 ? (
-        <div class="card-grid">
-          {schedules.regularHours.map((entry) => (
-            <EntryCard
-              title={entry.title}
-              meta={[{ label: 'When', value: entry.when || 'To be confirmed' }]}
-              details={entry.notes ?? []}
-              source={entry.source}
-              updated={entry.updated}
-            />
-          ))}
+    <section class="section" aria-labelledby="home-hours-heading">
+      <div class="section__header">
+        <div>
+          <h2 id="home-hours-heading">Operating hours</h2>
+          <p>Regular office hours, not temporary schedules.</p>
         </div>
-      ) : (
-        <EmptyState
-          title="No verified hours published yet"
-          message="Regular operating hours will appear here after they are confirmed."
-        />
-      )
-    }
-  </section>
-
-  <section class="section" aria-labelledby="home-updates-heading">
-    <div class="section__header">
-      <div>
-        <h2 id="home-updates-heading">Latest announcement</h2>
-        <p>Advisories and temporary changes.</p>
+        <LastUpdated updated={schedules.lastUpdated} />
       </div>
-      <LastUpdated updated={announcements.lastUpdated} />
-    </div>
-    {
-      latestAnnouncement ? (
-        <EntryCard
-          title={latestAnnouncement.title}
-          badge={latestAnnouncement.category}
-          meta={[
-            { label: 'Published', value: latestAnnouncement.published },
-            ...(latestAnnouncement.until ? [{ label: 'Until', value: latestAnnouncement.until }] : []),
-          ]}
-          details={[latestAnnouncement.body, ...(latestAnnouncement.notes ?? [])]}
-          source={latestAnnouncement.source}
-          updated={latestAnnouncement.updated}
-        />
-      ) : (
-        <EmptyState
-          title="No announcements published yet"
-          message="Verified advisories and temporary changes will appear here once available."
-        />
-      )
-    }
-  </section>
-
-  <section class="section split" aria-labelledby="layout-preview-heading">
-    <div>
-      <h2 id="layout-preview-heading"><Icon name="pin" size={20} /> Finding your way</h2>
-      <p class="lead">A verified room-by-room layout is being prepared. The placeholder below is not the final directory.</p>
-      <p><a href={hrefFor('directory')}>Open the directory</a></p>
-    </div>
-    <figure class="split__media">
-      <img
-        src={layoutPlaceholder.src}
-        alt="Placeholder floor plan with unlabeled rooms"
-        width="1200"
-        height="900"
-      />
-    </figure>
-  </section>
-
-  <section class="section" aria-labelledby="explore-heading">
-    <div class="section__header">
-      <div>
-        <h2 id="explore-heading">Explore information</h2>
-      </div>
-    </div>
-    <div class="card-grid">
       {
-        quickLinks.map((link) => (
-          <a class="card card-link" href={hrefFor(link.slug)}>
-            <h3 class="card__title"><Icon name={link.icon} size={18} /> {link.title}</h3>
-            <p>{link.description}</p>
-          </a>
-        ))
+        schedules.regularHours.length > 0 ? (
+          <div class="card-grid">
+            {schedules.regularHours.map((entry) => (
+              <EntryCard
+                title={entry.title}
+                meta={[{ label: 'When', value: entry.when || 'To be confirmed' }]}
+                details={entry.notes ?? []}
+                source={entry.source}
+                updated={entry.updated}
+              />
+            ))}
+          </div>
+        ) : (
+          <EmptyState
+            title="No verified hours published yet"
+            message="Regular operating hours will appear here after they are confirmed."
+          />
+        )
       }
-    </div>
-  </section>
+    </section>
+
+    <section class="section" aria-labelledby="home-updates-heading">
+      <div class="section__header">
+        <div>
+          <h2 id="home-updates-heading">Latest announcement</h2>
+          <p>Advisories and temporary changes.</p>
+        </div>
+        <LastUpdated updated={announcements.lastUpdated} />
+      </div>
+      {
+        latestAnnouncement ? (
+          <EntryCard
+            title={latestAnnouncement.title}
+            badge={latestAnnouncement.category}
+            meta={[
+              { label: 'Published', value: latestAnnouncement.published },
+              ...(latestAnnouncement.until ? [{ label: 'Until', value: latestAnnouncement.until }] : []),
+            ]}
+            details={[latestAnnouncement.body, ...(latestAnnouncement.notes ?? [])]}
+            source={latestAnnouncement.source}
+            updated={latestAnnouncement.updated}
+          />
+        ) : (
+          <EmptyState
+            title="No announcements published yet"
+            message="Verified advisories and temporary changes will appear here once available."
+          />
+        )
+      }
+    </section>
+
+    <section class="section split" aria-labelledby="layout-preview-heading">
+      <div>
+        <h2 id="layout-preview-heading"><Icon name="pin" size={20} /> Finding your way</h2>
+        <p class="lead">A verified room-by-room layout is being prepared. The placeholder below is not the final directory.</p>
+        <p><a href={hrefFor('directory')}>Open the directory</a></p>
+      </div>
+      <figure class="split__media">
+        <img
+          src={layoutPlaceholder.src}
+          alt="Placeholder floor plan with unlabeled rooms"
+          width="1200"
+          height="900"
+        />
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="explore-heading">
+      <div class="section__header">
+        <div>
+          <h2 id="explore-heading">Explore information</h2>
+        </div>
+      </div>
+      <div class="card-grid">
+        {
+          quickLinks.map((link) => (
+            <a class="card card-link" href={hrefFor(link.slug)}>
+              <h3 class="card__title"><Icon name={link.icon} size={18} /> {link.title}</h3>
+              <p>{link.description}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </div>
 </BaseLayout>

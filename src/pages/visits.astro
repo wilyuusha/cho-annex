@@ -15,49 +15,51 @@ const entries = [...visits.entries].sort((a, b) => b.date.localeCompare(a.date))
   title="Visits"
   description="Published barangay visits, outreach programs, and community activities of the City Health Office Annex."
 >
-  <header class="page-header">
-    <p class="eyebrow">In the community</p>
-    <h1>Visits</h1>
-    <p class="lead">
-      Barangay visits, outreach programs, and community activities. These are temporary activities, not regular office schedules.
-    </p>
-    <LastUpdated updated={visits.lastUpdated} />
-  </header>
+  <div class="container">
+    <header class="page-header">
+      <p class="eyebrow">In the community</p>
+      <h1>Visits</h1>
+      <p class="lead">
+        Barangay visits, outreach programs, and community activities. These are temporary activities, not regular office schedules.
+      </p>
+      <LastUpdated updated={visits.lastUpdated} />
+    </header>
 
-  {
-    entries.length > 0 ? (
-      <section class="section" aria-labelledby="visits-heading">
-        <div class="section__header">
-          <div>
-            <h2 id="visits-heading">Published visits and activities</h2>
+    {
+      entries.length > 0 ? (
+        <section class="section" aria-labelledby="visits-heading">
+          <div class="section__header">
+            <div>
+              <h2 id="visits-heading">Published visits and activities</h2>
+            </div>
           </div>
-        </div>
-        <div class="card-grid">
-          {entries.map((entry) => (
-            <EntryCard
-              title={entry.title}
-              badge={entry.status || 'Activity'}
-              meta={[
-                { label: 'Date', value: entry.date },
-                ...(entry.time ? [{ label: 'Time', value: entry.time }] : []),
-                ...(entry.barangay ? [{ label: 'Barangay', value: entry.barangay }] : []),
-                ...(entry.activity ? [{ label: 'Activity', value: entry.activity }] : []),
-              ]}
-              details={[
-                ...(entry.summary ? [entry.summary] : []),
-                ...(entry.notes ?? []),
-              ]}
-              source={entry.source}
-              updated={entry.updated}
-            />
-          ))}
-        </div>
-      </section>
-    ) : (
-      <EmptyState
-        title="No visits published yet"
-        message="Verified barangay visits, outreach programs, and community activities will appear here once confirmed."
-      />
-    )
-  }
+          <div class="card-grid">
+            {entries.map((entry) => (
+              <EntryCard
+                title={entry.title}
+                badge={entry.status || 'Activity'}
+                meta={[
+                  { label: 'Date', value: entry.date },
+                  ...(entry.time ? [{ label: 'Time', value: entry.time }] : []),
+                  ...(entry.barangay ? [{ label: 'Barangay', value: entry.barangay }] : []),
+                  ...(entry.activity ? [{ label: 'Activity', value: entry.activity }] : []),
+                ]}
+                details={[
+                  ...(entry.summary ? [entry.summary] : []),
+                  ...(entry.notes ?? []),
+                ]}
+                source={entry.source}
+                updated={entry.updated}
+              />
+            ))}
+          </div>
+        </section>
+      ) : (
+        <EmptyState
+          title="No visits published yet"
+          message="Verified barangay visits, outreach programs, and community activities will appear here once confirmed."
+        />
+      )
+    }
+  </div>
 </BaseLayout>
