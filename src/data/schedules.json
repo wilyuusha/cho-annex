@@ -15,7 +15,15 @@
       "updated": "2026-11-25"
     }
   ],
-  "abtc": [],
+  "abtc": [
+    {
+      "title": "ABTC schedule",
+      "when": "Tuesday, Wednesday, and Friday",
+      "effectiveDate": null,
+      "notes": ["Daily clinic hours have not been published."],
+      "updated": "2026-11-25"
+    }
+  ],
   "yakap": [],
   "serviceAvailability": [
     {

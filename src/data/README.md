@@ -8,7 +8,7 @@ Do not add unverified times, requirements, room assignments, or advisories. Set 
 
 ## `site.json`
 
-Site-wide name, short name, location, description, and optional `lastUpdated`.
+Site-wide name, short name, unit label, location, description, public address/contact details, and optional `lastUpdated`. The address is labeled with the facility it belongs to so it is not mistaken for a confirmed Annex address.
 
 ## `schedules.json`
 
@@ -32,7 +32,7 @@ Entry shape:
 }
 ```
 
-`effectiveDate` and `updated` may be `null` when not applicable.
+`effectiveDate` and `updated` may be `null` when not applicable. The ABTC days were confirmed by the site maintainer on `2026-11-25`; daily clinic hours have not been published.
 
 ## `visits.json`
 
