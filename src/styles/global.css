@@ -85,10 +85,6 @@ ul {
   padding-left: 1.25rem;
 }
 
-li + li {
-  margin-top: 0.25rem;
-}
-
 .container {
   width: min(100% - 2rem, 72rem);
   margin-inline: auto;
@@ -169,12 +165,17 @@ li + li {
 
 .site-nav__list {
   display: flex;
+  align-items: center;
   gap: var(--space-xs);
   margin: 0;
   padding: 0;
   list-style: none;
   overflow-x: auto;
   scrollbar-width: thin;
+}
+
+.site-nav__list > li {
+  margin: 0;
 }
 
 .site-nav__link {
@@ -275,6 +276,11 @@ li + li {
 
 .card__title {
   margin-bottom: var(--space-sm);
+}
+
+.card li + li,
+.notice li + li {
+  margin-top: var(--space-xs);
 }
 
 .card__meta {
