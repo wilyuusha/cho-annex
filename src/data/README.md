@@ -8,7 +8,7 @@ Do not add unverified times, requirements, room assignments, or advisories. Set 
 
 ## `site.json`
 
-Site-wide name, short name, unit label, location, description, public address/contact details, and optional `lastUpdated`. The address is labeled with the facility it belongs to so it is not mistaken for a confirmed Annex address.
+Site-wide name, short name, unit label, location, description, public address/contact details, and optional `lastUpdated`.
 
 ## `schedules.json`
 

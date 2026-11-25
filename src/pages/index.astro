@@ -5,6 +5,7 @@ import EmptyState from '../components/EmptyState.astro';
 import EntryCard from '../components/EntryCard.astro';
 import Icon from '../components/Icon.astro';
 import LastUpdated from '../components/LastUpdated.astro';
+import ScheduleTable from '../components/ScheduleTable.astro';
 import announcementsData from '../data/announcements.json';
 import schedulesData from '../data/schedules.json';
 import site from '../data/site.json';
@@ -41,19 +42,10 @@ const schedules = schedulesData as SchedulesData;
 const base = import.meta.env.BASE_URL;
 const hrefFor = (slug: string) => `${base}${slug.replace(/^\//, '')}/`;
 
-const quickLinks = [
-  { slug: 'schedules', title: 'Schedules', icon: 'calendar', description: 'Animal Bite Treatment Center (ABTC), YAKAP, service availability, and office hours.' },
-  { slug: 'services', title: 'Services', icon: 'heart', description: 'Available services and their requirements.' },
-  { slug: 'directory', title: 'Directory', icon: 'building', description: 'Building layout and visitor directions.' },
-  { slug: 'announcements', title: 'Announcements', icon: 'megaphone', description: 'Advisories and temporary changes.' },
-] as const;
-
 const latestAnnouncements = [...announcements.entries]
   .sort((a, b) => b.published.localeCompare(a.published))
   .slice(0, 3);
 
-const officeHours = schedules.regularHours[0];
-const abtcSchedule = schedules.abtc[0];
 const latestAnnouncement = latestAnnouncements[0];
 
 const homeHours = [
@@ -111,35 +103,18 @@ const homeHours = [
     </div>
     <div class="hero__panel">
       <div class="hero__body">
-        <p class="eyebrow">Public information portal</p>
+        <p class="eyebrow">Introduction</p>
         <h1 id="hero-heading">{site.shortName} <span class="hero__unit">{site.unit}</span></h1>
         <p class="lead">{site.description}</p>
         <div class="hero__actions">
-          <a class="button" href={hrefFor('schedules')}><Icon name="clock" size={16} /> View operating hours</a>
           <a class="button button--quiet" href={hrefFor('announcements')}><Icon name="megaphone" size={16} /> Latest advisory</a>
         </div>
-      </div>
-      <div class="hero__hours">
-        <span class="hero__hours-label"><Icon name="clock" size={14} /> Operating hours</span>
-        <span class="hero__hours-value">{officeHours?.when ?? 'To be confirmed'}</span>
-        <span class="hero__hours-meta">{officeHours ? 'City Health Office — General Office Hours' : 'Pending verification'}</span>
-        <span class="hero__hours-extra"><Icon name="calendar" size={13} /> Animal Bite Treatment Center (ABTC): {abtcSchedule?.when ?? 'To be confirmed'}</span>
       </div>
     </div>
   </section>
 
   <div class="container">
     <section class="quick-facts" aria-label="Key information">
-      <a class="fact" href={hrefFor('schedules')}>
-        <span class="fact__label"><Icon name="clock" size={14} /> Operating hours</span>
-        <span class="fact__value">{officeHours?.when ?? 'Hours to be confirmed'}</span>
-        <span class="fact__meta">{officeHours ? 'City Health Office — General Office Hours' : 'Pending verification'}</span>
-      </a>
-      <a class="fact" href={hrefFor('schedules')}>
-        <span class="fact__label"><Icon name="calendar" size={14} /> Animal Bite Treatment Center (ABTC)</span>
-        <span class="fact__value">{abtcSchedule?.when ?? 'Schedule to be confirmed'}</span>
-        <span class="fact__meta">{abtcSchedule ? 'Clinic hours not yet published' : 'Pending verification'}</span>
-      </a>
       <a class="fact" href={hrefFor('announcements')}>
         <span class="fact__label"><Icon name="megaphone" size={14} /> Latest announcement</span>
         <span class="fact__value">{latestAnnouncement?.title ?? 'No announcements yet'}</span>
@@ -155,25 +130,23 @@ const homeHours = [
     <section class="section" aria-labelledby="home-hours-heading">
       <div class="section__header">
         <div>
-          <h2 id="home-hours-heading">Operating hours and Animal Bite Treatment Center (ABTC)</h2>
-          <p>Regular office days and confirmed ABTC days.</p>
+          <h2 id="home-hours-heading">Operating hours</h2>
+          <p>Regular office days.</p>
         </div>
         <LastUpdated updated={schedules.lastUpdated} />
       </div>
       {
         homeHours.length > 0 ? (
-          <div class="card-grid">
-            {homeHours.map(({ entry, badge }) => (
-              <EntryCard
-                title={entry.title}
-                badge={badge}
-                meta={[{ label: 'When', value: entry.when || 'To be confirmed' }]}
-                details={entry.notes ?? []}
-                source={entry.source}
-                updated={entry.updated}
-              />
-            ))}
-          </div>
+          <ScheduleTable
+            rows={homeHours.map(({ entry, badge }) => ({
+              title: entry.title,
+              when: entry.when || 'To be confirmed',
+              notes: entry.notes ?? [],
+              badge,
+              source: entry.source,
+              updated: entry.updated,
+            }))}
+          />
         ) : (
           <EmptyState
             title="No verified hours published yet"
@@ -227,24 +200,6 @@ const homeHours = [
           height="900"
         />
       </figure>
-    </section>
-
-    <section class="section" aria-labelledby="explore-heading">
-      <div class="section__header">
-        <div>
-          <h2 id="explore-heading">Explore information</h2>
-        </div>
-      </div>
-      <div class="card-grid">
-        {
-          quickLinks.map((link) => (
-            <a class="card card-link" href={hrefFor(link.slug)}>
-              <h3 class="card__title"><Icon name={link.icon} size={18} /> {link.title}</h3>
-              <p>{link.description}</p>
-            </a>
-          ))
-        }
-      </div>
     </section>
   </div>
 </BaseLayout>

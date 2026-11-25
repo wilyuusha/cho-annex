@@ -14,7 +14,7 @@
   --radius-lg: 1rem;
   --shadow-card: 0 1px 2px rgba(38, 50, 56, 0.06);
   --shadow-lift: 0 18px 40px -28px rgba(38, 50, 56, 0.45);
-  --hero-overlap: 5rem;
+  --hero-overlap: 8rem;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -440,50 +440,6 @@ ul {
   margin-top: var(--space-md);
 }
 
-.hero__hours {
-  min-width: 14rem;
-  padding-left: var(--space-lg);
-  border-left: 1px solid var(--color-border);
-}
-
-.hero__hours-label {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--color-primary-dark);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.hero__hours-value {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-.hero__hours-meta {
-  display: block;
-  margin-top: 0.25rem;
-  color: var(--color-text-muted);
-  font-size: 0.75rem;
-}
-
-.hero__hours-extra {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--color-border);
-  color: var(--color-primary-dark);
-  font-size: 0.8125rem;
-  font-weight: 700;
-}
-
 .button--quiet {
   background: var(--color-surface);
   border-color: var(--color-border);
@@ -681,6 +637,135 @@ ul {
   margin: 0;
 }
 
+.schedule-table-wrap {
+  overflow-x: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.schedule-table {
+  width: 100%;
+  min-width: 38rem;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 1.125rem 1.25rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.schedule-table thead th {
+  background: var(--color-surface-alt);
+  color: var(--color-primary-dark);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.schedule-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.schedule-table__service {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+
+.schedule-table__service .badge {
+  margin-bottom: 0.15rem;
+}
+
+.schedule-table__title {
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.schedule-table__source {
+  margin-top: 0.35rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.schedule-table__source a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.schedule-table__when {
+  display: block;
+  max-width: 16rem;
+  line-height: 1.4;
+}
+
+.schedule-table__notes {
+  margin-bottom: var(--space-xs);
+  padding-left: 1.1rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.schedule-table__empty {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 40rem) {
+  .schedule-table {
+    min-width: 0;
+  }
+
+  .schedule-table thead {
+    display: none;
+  }
+
+  .schedule-table,
+  .schedule-table tbody,
+  .schedule-table tr,
+  .schedule-table th,
+  .schedule-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .schedule-table tr {
+    padding: 1rem 1.25rem;
+  }
+
+  .schedule-table tbody tr + tr {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .schedule-table td + td {
+    margin-top: 0.75rem;
+  }
+
+  .schedule-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.2rem;
+    color: var(--color-primary-dark);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
 .notice {
   margin-block: var(--space-lg);
   padding: 0.875rem 1rem;
@@ -819,7 +904,7 @@ ul {
 
 @media (max-width: 50rem) {
   :root {
-    --hero-overlap: 7rem;
+    --hero-overlap: 10rem;
   }
 
   .hero {
@@ -841,13 +926,6 @@ ul {
     align-items: stretch;
     gap: var(--space-md);
     padding: var(--space-md);
-  }
-
-  .hero__hours {
-    padding-top: var(--space-md);
-    padding-left: 0;
-    border-top: 1px solid var(--color-border);
-    border-left: 0;
   }
 
   .hero + .container {
