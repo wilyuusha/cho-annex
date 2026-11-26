@@ -8,7 +8,7 @@ Do not add unverified times, requirements, room assignments, or advisories. Set 
 
 ## `site.json`
 
-Site-wide name, short name, unit label, location, description, public address/contact details, and optional `lastUpdated`. Contact details include the general email, the health office email (`health@cityofvalencia.gov.ph`), and the public phone number (`+62 967 8827303`). `social.choFacebook` and `social.cityFacebook` hold the official page links supplied by the site maintainer.
+Site-wide name, short name, unit label, location, description, public address/contact details, and optional `lastUpdated`. Contact details include the health office email (`health@cityofvalencia.gov.ph`) and the public phone number (`+62 967 8827303`). `social.choFacebook` and `social.cityFacebook` hold the official page links supplied by the site maintainer.
 
 ## `schedules.json`
 
@@ -36,7 +36,7 @@ Entry shape:
 
 ## `doctors.json`
 
-Curated from `src/scrape/cho-annex-doctor-schedule.json`. The site maintainer confirmed the transcribed assignments and names on `2026-11-26`. Only OPD assignments are published: `doctors` holds each doctor's `name` and weekday `assignments`, with non-OPD assignments and doctors who have no OPD days removed. The source lists weekday assignments only, so no consultation hours are published.
+Curated from `src/scrape/cho-annex-doctor-schedule.json`. The site maintainer confirmed the transcribed assignments and names on `2026-11-26`. Only OPD assignments are published: `doctors` holds each doctor's `name` and weekday `assignments`, with non-OPD assignments and doctors who have no OPD days removed. The source lists weekday assignments only, so no consultation hours are published. The Doctors page uses only the names from this file; photos are MUI placeholders and professional details are withheld pending permission.
 
 ## `visits.json`
 

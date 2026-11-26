@@ -15,6 +15,7 @@ interface Props {
 const navItems = [
   { label: 'Home', slug: '/' },
   { label: 'Services', slug: '/services' },
+  { label: 'Doctors', slug: '/doctors' },
   { label: 'Directory', slug: '/directory' },
   { label: 'Announcements', slug: '/announcements' },
 ];

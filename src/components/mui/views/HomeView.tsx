@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import Typography from '@mui/material/Typography';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import MapIcon from '@mui/icons-material/Map';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
@@ -18,6 +19,23 @@ import ScheduleTable from '../ScheduleTable';
 import SectionHeader from '../SectionHeader';
 import type { AnnouncementEntry, DoctorsData, ServicesData } from '../../../data/types';
 import type { ScheduleRow, SiteInfo } from '../types';
+
+const quickCardSx = {
+  borderRadius: 2,
+  height: '100%',
+  transition: 'border-color 160ms ease, box-shadow 160ms ease',
+  '&:hover': {
+    borderColor: 'primary.main',
+    boxShadow: '0 10px 24px -18px rgba(46, 125, 50, 0.65)',
+  },
+} as const;
+
+const quickActionSx = {
+  p: 2.5,
+  display: 'block',
+  height: '100%',
+  '&:hover': { bgcolor: 'primary.light' },
+} as const;
 
 interface Props {
   site: SiteInfo;
@@ -58,7 +76,7 @@ export default function HomeView({
           bgcolor: '#f6faf6',
           borderBottom: '1px solid',
           borderColor: 'divider',
-          pt: { xs: '19rem', md: 'clamp(13rem, 30vw, 24rem)' },
+          pt: { xs: '22rem', md: 'clamp(15rem, 35vw, 28rem)' },
         }}
       >
         <HeroCarousel images={heroImages} />
@@ -132,8 +150,8 @@ export default function HomeView({
           aria-label="Key information"
           sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 14rem), 1fr))', gap: 2 }}
         >
-          <Card variant="outlined" sx={{ borderRadius: 2 }}>
-            <CardActionArea href={announcementsHref} sx={{ p: 2.5, display: 'block' }}>
+          <Card variant="outlined" sx={quickCardSx}>
+            <CardActionArea href={announcementsHref} sx={quickActionSx}>
               <Typography
                 component="span"
                 variant="overline"
@@ -153,8 +171,8 @@ export default function HomeView({
             </CardActionArea>
           </Card>
 
-          <Card variant="outlined" sx={{ borderRadius: 2 }}>
-            <CardActionArea href={directoryHref} sx={{ p: 2.5, display: 'block' }}>
+          <Card variant="outlined" sx={quickCardSx}>
+            <CardActionArea href={directoryHref} sx={quickActionSx}>
               <Typography
                 component="span"
                 variant="overline"
@@ -172,8 +190,8 @@ export default function HomeView({
             </CardActionArea>
           </Card>
 
-          <Card variant="outlined" sx={{ borderRadius: 2 }}>
-            <CardActionArea href={servicesHref} sx={{ p: 2.5, display: 'block' }}>
+          <Card variant="outlined" sx={quickCardSx}>
+            <CardActionArea href={servicesHref} sx={quickActionSx}>
               <Typography
                 component="span"
                 variant="overline"
@@ -219,6 +237,9 @@ export default function HomeView({
             icon={<MedicalServicesIcon />}
           />
           <DoctorScheduleTable data={doctors} />
+          <Button href={`${base}doctors/`} sx={{ color: 'primary.dark', mt: 1 }} endIcon={<ArrowForwardIcon />}>
+            View all doctors
+          </Button>
         </Box>
 
         <Box component="section" aria-labelledby="home-updates-heading">

@@ -7,7 +7,6 @@ export interface SiteInfo {
   location: string;
   description: string;
   address: string;
-  email: string;
   healthEmail: string;
   phone: string;
   social: {

@@ -75,15 +75,6 @@ export default function SiteFooter({ site, logos, base }: Props) {
               variant="body2"
               sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 0.5 }}
             >
-              <MailOutlinedIcon sx={{ fontSize: 14 }} />
-              <Link href={`mailto:${site.email}`} color="primary.dark">
-                {site.email}
-              </Link>
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 0.5 }}
-            >
               <PhoneIcon sx={{ fontSize: 14 }} />
               <Link href={`tel:${site.phone.replace(/[^+\d]/g, '')}`} color="primary.dark">
                 {site.phone}
@@ -123,7 +114,7 @@ export default function SiteFooter({ site, logos, base }: Props) {
             </Link>
           </Typography>
           <Typography variant="caption" color="text.secondary">
-            Address from a CHO public notice; email from the City of Valencia department directory.
+            Address and health office contact from public City of Valencia information.
           </Typography>
         </Box>
       </Box>

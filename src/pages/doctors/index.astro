@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DoctorsView from '../../components/mui/views/DoctorsView';
+import doctorsData from '../../data/doctors.json';
+import site from '../../data/site.json';
+import type { DoctorsData } from '../../data/types';
+import type { SiteInfo } from '../../components/mui/types';
+import doctorPlaceholder from '../../images/doctor-placeholder.svg';
+
+const doctors = doctorsData as DoctorsData;
+---
+
+<BaseLayout
+  title="Doctors"
+  description="Names of the doctors assigned to the City Health Office Annex in Valencia City, Bukidnon."
+>
+  <DoctorsView
+    doctors={doctors}
+    site={site as SiteInfo}
+    placeholderImage={doctorPlaceholder.src}
+  />
+</BaseLayout>
