@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import GroupsIcon from '@mui/icons-material/Groups';
 import AppThemeProvider from '../AppThemeProvider';
 import CardGrid from '../CardGrid';
 import EmptyState from '../EmptyState';
@@ -27,7 +28,7 @@ export default function VisitsView({ visits }: Props) {
 
         {entries.length > 0 ? (
           <Box component="section" aria-labelledby="visits-heading">
-            <SectionHeader id="visits-heading" title="Published visits and activities" />
+            <SectionHeader id="visits-heading" title="Published visits and activities" icon={<GroupsIcon />} />
             <CardGrid>
               {entries.map((entry) => (
                 <EntryCard

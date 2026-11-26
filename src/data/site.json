@@ -6,5 +6,9 @@
   "description": "Public information for the City Health Office Annex in Valencia City, Bukidnon.",
   "address": "Fortich Street, Poblacion, Valencia City, Bukidnon",
   "email": "chovalenciacitybukidnon@gmail.com",
+  "social": {
+    "choFacebook": "https://www.facebook.com/profile.php?id=100091532744779",
+    "cityFacebook": "https://www.facebook.com/LGUCityofValencia"
+  },
   "lastUpdated": null
 }

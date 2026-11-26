@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import CampaignIcon from '@mui/icons-material/Campaign';
 import AppThemeProvider from '../AppThemeProvider';
 import CardGrid from '../CardGrid';
 import EmptyState from '../EmptyState';
@@ -27,7 +28,7 @@ export default function AnnouncementsView({ announcements }: Props) {
 
         {entries.length > 0 ? (
           <Box component="section" aria-labelledby="announcements-heading">
-            <SectionHeader id="announcements-heading" title="Current and recent notices" />
+            <SectionHeader id="announcements-heading" title="Current and recent notices" icon={<CampaignIcon />} />
             <CardGrid>
               {entries.map((entry) => (
                 <EntryCard

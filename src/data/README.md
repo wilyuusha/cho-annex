@@ -8,7 +8,7 @@ Do not add unverified times, requirements, room assignments, or advisories. Set 
 
 ## `site.json`
 
-Site-wide name, short name, unit label, location, description, public address/contact details, and optional `lastUpdated`.
+Site-wide name, short name, unit label, location, description, public address/contact details, and optional `lastUpdated`. `social.choFacebook` and `social.cityFacebook` are placeholders (`#`) until the official page URLs are confirmed.
 
 ## `schedules.json`
 

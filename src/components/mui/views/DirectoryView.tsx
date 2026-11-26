@@ -1,5 +1,7 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import MapIcon from '@mui/icons-material/Map';
+import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import AppThemeProvider from '../AppThemeProvider';
 import CardGrid from '../CardGrid';
@@ -45,8 +47,13 @@ export default function DirectoryView({ directory, layoutPlaceholder }: Props) {
           sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1.15fr' }, gap: 3, alignItems: 'center', mb: 5 }}
         >
           <Box>
-            <Typography component="h2" variant="h2" id="layout-heading">
-              Building layout
+            <Typography
+              component="h2"
+              variant="h2"
+              id="layout-heading"
+              sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'primary.dark' }}
+            >
+              <MapIcon /> Building layout
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: '1.0625rem', mt: 1 }}>
               The verified room-by-room layout is being prepared. This placeholder is not the final directory.
@@ -66,7 +73,7 @@ export default function DirectoryView({ directory, layoutPlaceholder }: Props) {
         </Box>
 
         <Box component="section" aria-labelledby="rooms-heading">
-          <SectionHeader id="rooms-heading" title="Rooms and departments" />
+          <SectionHeader id="rooms-heading" title="Rooms and departments" icon={<MeetingRoomIcon />} />
           {directory.rooms.length > 0 ? (
             <CardGrid>
               {directory.rooms.map((room) => (

@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import LogoPair from './LogoPair';
@@ -31,23 +32,39 @@ export default function SiteFooter({ site, logos, base }: Props) {
           width: 'min(100% - 2rem, 68rem)',
           mx: 'auto',
           display: 'flex',
-          flexWrap: 'wrap',
+          flexDirection: { xs: 'column', md: 'row' },
+          alignItems: { xs: 'center', md: 'flex-start' },
+          justifyContent: { xs: 'center', md: 'space-between' },
+          textAlign: { xs: 'center', md: 'left' },
           gap: 3,
-          justifyContent: 'space-between',
         }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
-          <LogoPair logos={logos} height={32} decorative />
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: { xs: 'center', md: 'flex-start' },
+            justifyContent: { xs: 'center', md: 'flex-start' },
+            gap: 1.5,
+          }}
+        >
+          <LogoPair logos={logos} height={44} decorative />
           <Box>
             <Typography sx={{ fontWeight: 700, mb: 0.25 }}>{site.shortName}</Typography>
             <Typography variant="body2" color="text.secondary">
               {site.unit} · {site.location}
             </Typography>
-            <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5 }}>
+            <Typography
+              variant="body2"
+              sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 0.5, mt: 0.5 }}
+            >
               <PlaceOutlinedIcon sx={{ fontSize: 14 }} />
               <span>{site.address}</span>
             </Typography>
-            <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+            <Typography
+              variant="body2"
+              sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 0.5 }}
+            >
               <MailOutlinedIcon sx={{ fontSize: 14 }} />
               <Link href={`mailto:${site.email}`} color="primary.dark">
                 {site.email}
@@ -56,11 +73,34 @@ export default function SiteFooter({ site, logos, base }: Props) {
           </Box>
         </Box>
 
-        <Box>
+        <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
           <Typography variant="body2">Public information only. Details are subject to change.</Typography>
           <Typography variant="body2">
             <Link href={`${base}announcements/`} color="primary.dark">
               View advisories and announcements
+            </Link>
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 1.5, mt: 0.5 }}
+          >
+            <Link
+              href={site.social.choFacebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              color="primary.dark"
+              sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}
+            >
+              <FacebookIcon sx={{ fontSize: 14 }} /> City Health Office on Facebook
+            </Link>
+            <Link
+              href={site.social.cityFacebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              color="primary.dark"
+              sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}
+            >
+              <FacebookIcon sx={{ fontSize: 14 }} /> City Government of Valencia on Facebook
             </Link>
           </Typography>
           <Typography variant="caption" color="text.secondary">

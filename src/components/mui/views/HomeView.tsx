@@ -5,7 +5,9 @@ import CardActionArea from '@mui/material/CardActionArea';
 import Typography from '@mui/material/Typography';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import MapIcon from '@mui/icons-material/Map';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+import ScheduleIcon from '@mui/icons-material/Schedule';
 import AppThemeProvider from '../AppThemeProvider';
 import DoctorScheduleTable from '../../DoctorScheduleTable';
 import EmptyState from '../EmptyState';
@@ -53,7 +55,7 @@ export default function HomeView({
           bgcolor: '#f6faf6',
           borderBottom: '1px solid',
           borderColor: 'divider',
-          pt: { xs: '17rem', md: 'clamp(11rem, 26vw, 21.5rem)' },
+          pt: { xs: '19rem', md: 'clamp(13rem, 30vw, 24rem)' },
         }}
       >
         <HeroCarousel images={heroImages} />
@@ -172,6 +174,7 @@ export default function HomeView({
             title="Operating hours"
             description="Regular office days."
             updated={schedulesLastUpdated}
+            icon={<ScheduleIcon />}
           />
           {hours.length > 0 ? (
             <ScheduleTable rows={hours} />
@@ -189,6 +192,7 @@ export default function HomeView({
             title="Schedule of doctors"
             description="OPD days by doctor. Consultation hours are not specified in the source schedule."
             updated={doctors.lastUpdated}
+            icon={<MedicalServicesIcon />}
           />
           <DoctorScheduleTable data={doctors} />
         </Box>
@@ -199,6 +203,7 @@ export default function HomeView({
             title="Latest announcement"
             description="Advisories and temporary changes."
             updated={announcementsLastUpdated}
+            icon={<CampaignIcon />}
           />
           {latestAnnouncement ? (
             <EntryCard
@@ -226,7 +231,7 @@ export default function HomeView({
           sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1.15fr' }, gap: 3, alignItems: 'center' }}
         >
           <Box>
-            <Typography component="h2" variant="h2" id="layout-preview-heading" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <Typography component="h2" variant="h2" id="layout-preview-heading" sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'primary.dark' }}>
               <PlaceOutlinedIcon /> Finding your way
             </Typography>
             <Typography color="text.secondary" sx={{ fontSize: '1.0625rem', mt: 1 }}>

@@ -8,6 +8,10 @@ export interface SiteInfo {
   description: string;
   address: string;
   email: string;
+  social: {
+    choFacebook: string;
+    cityFacebook: string;
+  };
   lastUpdated: string | null;
 }
 

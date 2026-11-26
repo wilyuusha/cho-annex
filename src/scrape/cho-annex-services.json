@@ -1,0 +1,478 @@
+{
+  "metadata": {
+    "title": "City Health Office Annex — Services Offered",
+    "facility": "City Health Office Annex",
+    "also_known_as": "Old German Doctors",
+    "location": "Fortich Street, Poblacion, Valencia City, Bukidnon, Philippines",
+    "source_poster": "User-provided CHO services poster; right-hand Annex column only",
+    "last_updated": "2026-11-26",
+    "data_type": "static_public_information",
+    "publication_status": "requires_CHO_confirmation",
+    "notes": [
+      "Only services listed under the CHO Annex column were transcribed, plus the subsequently announced TB-DOTS transfer.",
+      "Poster schedules are transcribed as printed and have not been independently confirmed as current.",
+      "The TB-DOTS Center transfer to the Annex was announced effective October 26, 2026.",
+      "Most poster entries give days only, not service hours. Listed days do not guarantee walk-in availability.",
+      "Confirm schedules, requirements, fees and service locations with CHO before presenting this as an official current directory."
+    ]
+  },
+  "services": [
+    {
+      "id": "pwd-certificate",
+      "name": "Disability / PWD Certificate",
+      "category": "certificates_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "medico-legal-certification",
+      "name": "Medico-Legal Certification",
+      "category": "certificates_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "gender-entry-correction",
+      "name": "Gender Entry Correction (Birth Certificate)",
+      "category": "certificates_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "death-certificate",
+      "name": "Death Certificate",
+      "category": "certificates_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "animal-bite-treatment-center",
+      "name": "Animal Bite Treatment Center (ABTC)",
+      "category": "clinical_services",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday, Tuesday and Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "cvhash",
+      "name": "CVHASH",
+      "category": "clinical_services",
+      "days": [
+        "Wednesday",
+        "Thursday"
+      ],
+      "hours": null,
+      "schedule_label": "Wednesday and Thursday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified",
+      "notes": "Acronym retained as printed; confirm its official expansion before publication."
+    },
+    {
+      "id": "schistosomiasis-treatment",
+      "name": "Schistosomiasis Selective Treatment",
+      "category": "public_health_programs",
+      "days": [
+        "Wednesday",
+        "Thursday"
+      ],
+      "hours": null,
+      "schedule_label": "Wednesday and Thursday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "food-handlers-class",
+      "name": "Food Handlers' Class",
+      "category": "environmental_health",
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday and Wednesday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified",
+      "notes": "The poster gives days only, not the class time or duration."
+    },
+    {
+      "id": "health-certificate",
+      "name": "Issuance of Health Certificate",
+      "category": "certificates_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "transfer-cadaver-permit",
+      "name": "Issuance of Transfer of Cadaver Permit",
+      "category": "permits_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "exhumation-permit",
+      "name": "Issuance of Exhumation Permit",
+      "category": "permits_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "transport-clearance",
+      "name": "Issuance of Transport Clearance",
+      "category": "permits_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "certificate-potability",
+      "name": "Issuance of Certificate of Potability",
+      "category": "permits_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "misting-operations",
+      "name": "Misting Operations",
+      "category": "environmental_health",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "search-and-destroy",
+      "name": "Search and Destroy Activity",
+      "category": "environmental_health",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "water-bacteriological-examination",
+      "name": "Bacteriological Examination for Water Refilling Stations",
+      "category": "laboratory_and_water_testing",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "physical-chemical-analysis",
+      "name": "Physical-Chemical Analysis",
+      "category": "laboratory_and_water_testing",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "sanitation-facility-inspection",
+      "name": "Inspection for Sanitation Facility (Zero-Open Defecation Status)",
+      "category": "environmental_health",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "establishment-inspection",
+      "name": "Inspection of Non-Food / Food Establishments",
+      "category": "environmental_health",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "environmental-sanitation-complaints",
+      "name": "Assistance with Complaints Related to Environmental Sanitation",
+      "category": "environmental_health",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "physical-therapy",
+      "name": "Physical Therapy Session",
+      "category": "rehabilitation_services",
+      "days": [],
+      "hours": null,
+      "schedule_label": "Wednesday schedule (as printed)",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified",
+      "notes": "Poster wording appears to say 'Wed. scheduled'; confirm whether this is every Wednesday or by appointment."
+    },
+    {
+      "id": "csc-appointment-forms",
+      "name": "CSC Appointment Forms",
+      "category": "other_assistance",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "bondable-position-requirements",
+      "name": "Bondable Position Requirements",
+      "category": "other_assistance",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "deped-student-forms",
+      "name": "DepEd Forms for Students",
+      "category": "other_assistance",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "bjmp-police-commitment",
+      "name": "BJMP / Police Requests for Commitment to Jail",
+      "category": "certificates_and_clearances",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": null,
+      "schedule_label": "Monday–Friday",
+      "source": "User-provided CHO services poster — Annex column",
+      "verification_status": "poster_transcription_unverified"
+    },
+    {
+      "id": "tb-dots",
+      "name": "TB-DOTS Center",
+      "category": "clinical_services",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": {
+        "opens": "08:00",
+        "closes": "17:00",
+        "timezone": "Asia/Manila"
+      },
+      "schedule_label": "Monday–Friday, 8:00 AM–5:00 PM",
+      "description": "TB evaluation, screening and treatment guidance.",
+      "source": "CHO public transfer notice dated 2026-10-27",
+      "effective_date": "2026-10-26",
+      "verification_status": "publicly_announced_transfer",
+      "notes": "Transferred from the New Terminal Complex to Fortich Street, Poblacion, Valencia City (Old German Doctors), effective October 26, 2026."
+    }
+  ],
+  "categories": [
+    {
+      "id": "clinical_services",
+      "label": "Clinical Services"
+    },
+    {
+      "id": "certificates_and_clearances",
+      "label": "Certificates and Clearances"
+    },
+    {
+      "id": "permits_and_clearances",
+      "label": "Permits and Clearances"
+    },
+    {
+      "id": "environmental_health",
+      "label": "Environmental Health and Sanitation"
+    },
+    {
+      "id": "laboratory_and_water_testing",
+      "label": "Laboratory and Water Testing"
+    },
+    {
+      "id": "public_health_programs",
+      "label": "Public Health Programs"
+    },
+    {
+      "id": "rehabilitation_services",
+      "label": "Rehabilitation Services"
+    },
+    {
+      "id": "other_assistance",
+      "label": "Other Assistance"
+    }
+  ],
+  "sources": [
+    {
+      "type": "user_provided_image",
+      "description": "CHO services poster. Only the right-hand CHO Annex column was transcribed."
+    },
+    {
+      "type": "public_announcement",
+      "title": "CHO TB-DOTS Center transferred to Fortich Street",
+      "date": "2026-10-27",
+      "effective_date": "2026-10-26",
+      "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office",
+      "details": "The CHO announced transfer from the New Terminal Complex to Fortich Street, Poblacion, Valencia City (Old German Doctors), with clinic hours Monday–Friday, 8:00 AM–5:00 PM."
+    }
+  ]
+}

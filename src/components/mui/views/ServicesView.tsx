@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import AppThemeProvider from '../AppThemeProvider';
 import CardGrid from '../CardGrid';
 import EmptyState from '../EmptyState';
@@ -25,7 +26,7 @@ export default function ServicesView({ services }: Props) {
 
         {services.services.length > 0 ? (
           <Box component="section" aria-labelledby="services-heading">
-            <SectionHeader id="services-heading" title="Available services" />
+            <SectionHeader id="services-heading" title="Available services" icon={<MedicalServicesIcon />} />
             <CardGrid>
               {services.services.map((service) => (
                 <EntryCard
