@@ -5,6 +5,7 @@ import Chip from '@mui/material/Chip';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import NorthEastIcon from '@mui/icons-material/NorthEast';
+import type { ReactNode } from 'react';
 import LastUpdated from './LastUpdated';
 import type { CardSource, MetaItem } from './types';
 
@@ -13,12 +14,22 @@ interface Props {
   meta?: MetaItem[];
   details?: string[];
   badge?: string;
+  highlight?: ReactNode;
   source?: CardSource;
   sourceNote?: string;
   updated?: string | null;
 }
 
-export default function EntryCard({ title, meta = [], details = [], badge, source, sourceNote, updated = null }: Props) {
+export default function EntryCard({
+  title,
+  meta = [],
+  details = [],
+  badge,
+  highlight,
+  source,
+  sourceNote,
+  updated = null,
+}: Props) {
   return (
     <Card variant="outlined" sx={{ height: '100%', borderRadius: 2 }}>
       <CardContent sx={{ p: 2.5, '&:last-child': { pb: 2.5 } }}>
@@ -33,6 +44,8 @@ export default function EntryCard({ title, meta = [], details = [], badge, sourc
         <Typography component="h3" variant="h3">
           {title}
         </Typography>
+
+        {highlight}
 
         {meta.length > 0 ? (
           <Box

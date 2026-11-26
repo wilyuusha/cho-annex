@@ -10,6 +10,7 @@ import AppThemeProvider from '../AppThemeProvider';
 import CardGrid from '../CardGrid';
 import EmptyState from '../EmptyState';
 import EntryCard from '../EntryCard';
+import { formatDate } from '../formatDate';
 import Notice from '../Notice';
 import PageContainer from '../PageContainer';
 import PageHeader from '../PageHeader';
@@ -95,7 +96,9 @@ export default function SchedulesView({ schedules, base }: Props) {
                       title={entry.title}
                       meta={[
                         { label: 'When', value: entry.when || 'To be confirmed' },
-                        ...(entry.effectiveDate ? [{ label: 'Effective', value: entry.effectiveDate }] : []),
+                        ...(entry.effectiveDate
+                          ? [{ label: 'Effective', value: formatDate(entry.effectiveDate) }]
+                          : []),
                       ]}
                       details={entry.notes ?? []}
                       source={entry.source}

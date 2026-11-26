@@ -28,7 +28,7 @@ export default function HeroCarousel({ images }: Props) {
         sx={{
           position: 'absolute',
           inset: 0,
-          zIndex: 1,
+          zIndex: 2,
           backgroundImage:
             'radial-gradient(rgba(46, 125, 50, 0.12) 1px, transparent 1px), linear-gradient(rgba(38, 50, 56, 0.18), rgba(38, 50, 56, 0.18))',
           backgroundSize: '24px 24px, 100% 100%',
@@ -39,7 +39,7 @@ export default function HeroCarousel({ images }: Props) {
         sx={{
           position: 'absolute',
           inset: 0,
-          zIndex: 2,
+          zIndex: 1,
           px: '3px',
           display: 'grid',
           gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: '2fr 1fr 1fr' },

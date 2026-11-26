@@ -7,11 +7,13 @@ import AppThemeProvider from '../AppThemeProvider';
 import CardGrid from '../CardGrid';
 import ContactCard from '../ContactCard';
 import EntryCard from '../EntryCard';
+import { formatDate } from '../formatDate';
 import Notice from '../Notice';
 import PageContainer from '../PageContainer';
 import PageHeader from '../PageHeader';
 import SectionHeader from '../SectionHeader';
 import ServiceCategoryIcon from '../ServiceCategoryIcon';
+import ServiceSchedule from '../ServiceSchedule';
 import type { ServiceCategory, ServicesData } from '../../../data/types';
 import type { SiteInfo } from '../types';
 
@@ -60,10 +62,18 @@ export default function ServiceCategoryView({ services, category, site, base }: 
                 key={service.id}
                 title={service.name}
                 badge={service.verification}
-                meta={[
-                  { label: 'When', value: service.availability ?? 'To be confirmed' },
-                  ...(service.effectiveDate ? [{ label: 'Effective', value: service.effectiveDate }] : []),
-                ]}
+                highlight={
+                  <ServiceSchedule
+                    availability={service.availability}
+                    days={service.days}
+                    hours={service.hours}
+                  />
+                }
+                meta={
+                  service.effectiveDate
+                    ? [{ label: 'Effective', value: formatDate(service.effectiveDate) }]
+                    : []
+                }
                 details={[
                   ...(service.description ? [service.description] : []),
                   ...(service.requirements ?? []).map((item) => `Requirement: ${item}`),

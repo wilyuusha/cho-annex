@@ -1,19 +1,10 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { formatDate } from './formatDate';
 
 interface Props {
   updated?: string | null;
   label?: string;
-}
-
-function formatDate(value: string) {
-  const parsed = new Date(value);
-  if (Number.isNaN(parsed.getTime())) return value;
-  return parsed.toLocaleDateString('en-PH', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
 }
 
 export default function LastUpdated({ updated = null, label = 'Last updated' }: Props) {

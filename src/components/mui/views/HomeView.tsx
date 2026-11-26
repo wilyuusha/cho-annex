@@ -12,6 +12,7 @@ import AppThemeProvider from '../AppThemeProvider';
 import DoctorScheduleTable from '../../DoctorScheduleTable';
 import EmptyState from '../EmptyState';
 import EntryCard from '../EntryCard';
+import { formatDate } from '../formatDate';
 import HeroCarousel from '../HeroCarousel';
 import ScheduleTable from '../ScheduleTable';
 import SectionHeader from '../SectionHeader';
@@ -145,7 +146,9 @@ export default function HomeView({
                 {latestAnnouncement?.title ?? 'No announcements yet'}
               </Typography>
               <Typography component="span" variant="caption" color="text.secondary" sx={{ display: 'block' }}>
-                {latestAnnouncement ? `Published ${latestAnnouncement.published}` : 'Pending verification'}
+                {latestAnnouncement
+                  ? `Published ${formatDate(latestAnnouncement.published)}`
+                  : 'Pending verification'}
               </Typography>
             </CardActionArea>
           </Card>

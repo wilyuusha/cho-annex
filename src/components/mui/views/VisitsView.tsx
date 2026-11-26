@@ -4,6 +4,7 @@ import AppThemeProvider from '../AppThemeProvider';
 import CardGrid from '../CardGrid';
 import EmptyState from '../EmptyState';
 import EntryCard from '../EntryCard';
+import { formatDate } from '../formatDate';
 import PageContainer from '../PageContainer';
 import PageHeader from '../PageHeader';
 import SectionHeader from '../SectionHeader';
@@ -36,7 +37,7 @@ export default function VisitsView({ visits }: Props) {
                   title={entry.title}
                   badge={entry.status || 'Activity'}
                   meta={[
-                    { label: 'Date', value: entry.date },
+                    { label: 'Date', value: formatDate(entry.date) },
                     ...(entry.time ? [{ label: 'Time', value: entry.time }] : []),
                     ...(entry.barangay ? [{ label: 'Barangay', value: entry.barangay }] : []),
                     ...(entry.activity ? [{ label: 'Activity', value: entry.activity }] : []),

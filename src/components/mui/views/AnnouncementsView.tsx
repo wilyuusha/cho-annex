@@ -4,6 +4,7 @@ import AppThemeProvider from '../AppThemeProvider';
 import CardGrid from '../CardGrid';
 import EmptyState from '../EmptyState';
 import EntryCard from '../EntryCard';
+import { formatDate } from '../formatDate';
 import PageContainer from '../PageContainer';
 import PageHeader from '../PageHeader';
 import SectionHeader from '../SectionHeader';
@@ -36,8 +37,8 @@ export default function AnnouncementsView({ announcements }: Props) {
                   title={entry.title}
                   badge={entry.category}
                   meta={[
-                    { label: 'Published', value: entry.published },
-                    ...(entry.until ? [{ label: 'Until', value: entry.until }] : []),
+                    { label: 'Published', value: formatDate(entry.published) },
+                    ...(entry.until ? [{ label: 'Until', value: formatDate(entry.until) }] : []),
                   ]}
                   details={[entry.body, ...(entry.notes ?? [])]}
                   source={entry.source}
