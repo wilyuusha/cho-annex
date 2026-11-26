@@ -53,18 +53,36 @@ export interface VisitsData {
   entries: VisitEntry[];
 }
 
-export interface ServiceEntry {
-  name: string;
+export interface ServiceCategory {
+  id: string;
+  label: string;
   description?: string;
-  availability?: string;
+}
+
+export interface ServiceEntry {
+  id: string;
+  name: string;
+  category: string;
+  availability: string | null;
+  days: string[];
+  hours?: {
+    opens: string;
+    closes: string;
+    timezone: string;
+  } | null;
+  description?: string;
+  effectiveDate?: string | null;
   requirements?: string[];
   notes?: string[];
+  verification?: string;
+  sourceNote?: string;
   source?: SourceRef;
-  updated?: string | null;
 }
 
 export interface ServicesData {
   lastUpdated: string | null;
+  notice?: string;
+  categories: ServiceCategory[];
   services: ServiceEntry[];
 }
 

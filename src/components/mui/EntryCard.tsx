@@ -14,10 +14,11 @@ interface Props {
   details?: string[];
   badge?: string;
   source?: CardSource;
+  sourceNote?: string;
   updated?: string | null;
 }
 
-export default function EntryCard({ title, meta = [], details = [], badge, source, updated = null }: Props) {
+export default function EntryCard({ title, meta = [], details = [], badge, source, sourceNote, updated = null }: Props) {
   return (
     <Card variant="outlined" sx={{ height: '100%', borderRadius: 2 }}>
       <CardContent sx={{ p: 2.5, '&:last-child': { pb: 2.5 } }}>
@@ -74,6 +75,12 @@ export default function EntryCard({ title, meta = [], details = [], badge, sourc
               {source.title}
               <NorthEastIcon sx={{ fontSize: 12, verticalAlign: 'middle', ml: 0.25 }} />
             </Link>
+          </Typography>
+        ) : null}
+
+        {sourceNote ? (
+          <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.75 }}>
+            Source: {sourceNote}
           </Typography>
         ) : null}
 

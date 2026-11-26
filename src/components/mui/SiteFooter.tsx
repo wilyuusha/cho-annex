@@ -3,6 +3,7 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
+import PhoneIcon from '@mui/icons-material/Phone';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import LogoPair from './LogoPair';
 import type { Logos, SiteInfo } from './types';
@@ -66,8 +67,26 @@ export default function SiteFooter({ site, logos, base }: Props) {
               sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 0.5 }}
             >
               <MailOutlinedIcon sx={{ fontSize: 14 }} />
+              <Link href={`mailto:${site.healthEmail}`} color="primary.dark">
+                {site.healthEmail}
+              </Link>
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 0.5 }}
+            >
+              <MailOutlinedIcon sx={{ fontSize: 14 }} />
               <Link href={`mailto:${site.email}`} color="primary.dark">
                 {site.email}
+              </Link>
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-start' }, gap: 0.5 }}
+            >
+              <PhoneIcon sx={{ fontSize: 14 }} />
+              <Link href={`tel:${site.phone.replace(/[^+\d]/g, '')}`} color="primary.dark">
+                {site.phone}
               </Link>
             </Typography>
           </Box>

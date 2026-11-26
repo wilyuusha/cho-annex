@@ -8,6 +8,8 @@ export interface SiteInfo {
   description: string;
   address: string;
   email: string;
+  healthEmail: string;
+  phone: string;
   social: {
     choFacebook: string;
     cityFacebook: string;

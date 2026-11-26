@@ -14,9 +14,14 @@ interface Props {
 
 const navItems = [
   { label: 'Home', slug: '/' },
+  { label: 'Services', slug: '/services' },
   { label: 'Directory', slug: '/directory' },
   { label: 'Announcements', slug: '/announcements' },
 ];
+
+function isActivePath(currentPath: string, slug: string) {
+  return slug === '/' ? currentPath === '/' : currentPath === slug || currentPath.startsWith(`${slug}/`);
+}
 
 function hrefFor(slug: string, base: string) {
   return slug === '/' ? base : `${base}${slug.replace(/^\//, '')}/`;
@@ -72,7 +77,7 @@ export default function SiteHeader({ site, logos, currentPath, base }: Props) {
             sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' }, listStyle: 'none', p: 0, m: 0, gap: { xs: 0.25, md: 0.5 } }}
           >
             {navItems.map((item) => {
-              const isActive = currentPath === item.slug;
+              const isActive = isActivePath(currentPath, item.slug);
               return (
                 <Box component="li" key={item.slug}>
                   <Button

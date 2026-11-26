@@ -1,4 +1,444 @@
 {
-  "lastUpdated": null,
-  "services": []
+  "lastUpdated": "2026-11-26",
+  "notice": "Most services below were transcribed from a user-provided CHO Annex poster and have not been independently confirmed as current. The poster lists days but not service hours for most entries, and listed days do not guarantee walk-in availability. Confirm schedules, requirements, and fees with the office before your visit.",
+  "categories": [
+    {
+      "id": "clinical_services",
+      "label": "Clinical Services",
+      "description": "Clinical care and treatment services offered at the Annex."
+    },
+    {
+      "id": "certificates_and_clearances",
+      "label": "Certificates and Clearances",
+      "description": "Certificates and clearances issued by the office."
+    },
+    {
+      "id": "permits_and_clearances",
+      "label": "Permits and Clearances",
+      "description": "Permits and clearances issued by the office."
+    },
+    {
+      "id": "environmental_health",
+      "label": "Environmental Health and Sanitation",
+      "description": "Environmental health, sanitation, and inspection services."
+    },
+    {
+      "id": "laboratory_and_water_testing",
+      "label": "Laboratory and Water Testing",
+      "description": "Laboratory and water quality testing services."
+    },
+    {
+      "id": "public_health_programs",
+      "label": "Public Health Programs",
+      "description": "Public health programs and selective treatment."
+    },
+    {
+      "id": "rehabilitation_services",
+      "label": "Rehabilitation Services",
+      "description": "Rehabilitation and therapy sessions."
+    },
+    {
+      "id": "other_assistance",
+      "label": "Other Assistance",
+      "description": "Forms and assistance for students, applicants, and partner agencies."
+    }
+  ],
+  "services": [
+    {
+      "id": "pwd-certificate",
+      "name": "Disability / PWD Certificate",
+      "category": "certificates_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "medico-legal-certification",
+      "name": "Medico-Legal Certification",
+      "category": "certificates_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "gender-entry-correction",
+      "name": "Gender Entry Correction (Birth Certificate)",
+      "category": "certificates_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "death-certificate",
+      "name": "Death Certificate",
+      "category": "certificates_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "animal-bite-treatment-center",
+      "name": "Animal Bite Treatment Center (ABTC)",
+      "category": "clinical_services",
+      "availability": "Monday, Tuesday and Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "cvhash",
+      "name": "CVHASH",
+      "category": "clinical_services",
+      "availability": "Wednesday and Thursday",
+      "days": [
+        "Wednesday",
+        "Thursday"
+      ],
+      "notes": [
+        "Acronym retained as printed; confirm its official expansion before publication."
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "schistosomiasis-treatment",
+      "name": "Schistosomiasis Selective Treatment",
+      "category": "public_health_programs",
+      "availability": "Wednesday and Thursday",
+      "days": [
+        "Wednesday",
+        "Thursday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "food-handlers-class",
+      "name": "Food Handlers' Class",
+      "category": "environmental_health",
+      "availability": "Monday and Wednesday",
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "notes": [
+        "The poster gives days only, not the class time or duration."
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "health-certificate",
+      "name": "Issuance of Health Certificate",
+      "category": "certificates_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "transfer-cadaver-permit",
+      "name": "Issuance of Transfer of Cadaver Permit",
+      "category": "permits_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "exhumation-permit",
+      "name": "Issuance of Exhumation Permit",
+      "category": "permits_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "transport-clearance",
+      "name": "Issuance of Transport Clearance",
+      "category": "permits_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "certificate-potability",
+      "name": "Issuance of Certificate of Potability",
+      "category": "permits_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "misting-operations",
+      "name": "Misting Operations",
+      "category": "environmental_health",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "search-and-destroy",
+      "name": "Search and Destroy Activity",
+      "category": "environmental_health",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "water-bacteriological-examination",
+      "name": "Bacteriological Examination for Water Refilling Stations",
+      "category": "laboratory_and_water_testing",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "physical-chemical-analysis",
+      "name": "Physical-Chemical Analysis",
+      "category": "laboratory_and_water_testing",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "sanitation-facility-inspection",
+      "name": "Inspection for Sanitation Facility (Zero-Open Defecation Status)",
+      "category": "environmental_health",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "establishment-inspection",
+      "name": "Inspection of Non-Food / Food Establishments",
+      "category": "environmental_health",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "environmental-sanitation-complaints",
+      "name": "Assistance with Complaints Related to Environmental Sanitation",
+      "category": "environmental_health",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "physical-therapy",
+      "name": "Physical Therapy Session",
+      "category": "rehabilitation_services",
+      "availability": "Wednesday schedule (as printed)",
+      "days": [],
+      "notes": [
+        "Poster wording appears to say 'Wed. scheduled'; confirm whether this is every Wednesday or by appointment."
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "csc-appointment-forms",
+      "name": "CSC Appointment Forms",
+      "category": "other_assistance",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "bondable-position-requirements",
+      "name": "Bondable Position Requirements",
+      "category": "other_assistance",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "deped-student-forms",
+      "name": "DepEd Forms for Students",
+      "category": "other_assistance",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "bjmp-police-commitment",
+      "name": "BJMP / Police Requests for Commitment to Jail",
+      "category": "certificates_and_clearances",
+      "availability": "Monday–Friday",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "verification": "Confirm with CHO",
+      "sourceNote": "User-provided CHO services poster — Annex column"
+    },
+    {
+      "id": "tb-dots",
+      "name": "TB-DOTS Center",
+      "category": "clinical_services",
+      "availability": "Monday–Friday, 8:00 AM–5:00 PM",
+      "days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "hours": {
+        "opens": "08:00",
+        "closes": "17:00",
+        "timezone": "Asia/Manila"
+      },
+      "description": "TB evaluation, screening and treatment guidance.",
+      "effectiveDate": "2026-10-26",
+      "notes": [
+        "Transferred from the New Terminal Complex to Fortich Street, Poblacion, Valencia City (Old German Doctors), effective October 26, 2026."
+      ],
+      "verification": "Announced transfer",
+      "sourceNote": "CHO public transfer notice dated 2026-10-27",
+      "source": {
+        "title": "CHO TB-DOTS Center transferred to Fortich Street",
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office"
+      }
+    }
+  ]
 }

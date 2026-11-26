@@ -15,8 +15,7 @@ import EntryCard from '../EntryCard';
 import HeroCarousel from '../HeroCarousel';
 import ScheduleTable from '../ScheduleTable';
 import SectionHeader from '../SectionHeader';
-import type { DoctorsData } from '../../../data/types';
-import type { AnnouncementEntry } from '../../../data/types';
+import type { AnnouncementEntry, DoctorsData, ServicesData } from '../../../data/types';
 import type { ScheduleRow, SiteInfo } from '../types';
 
 interface Props {
@@ -25,6 +24,7 @@ interface Props {
   latestAnnouncement: AnnouncementEntry | null;
   hours: ScheduleRow[];
   doctors: DoctorsData;
+  services: ServicesData;
   schedulesLastUpdated: string | null;
   announcementsLastUpdated: string | null;
   layoutPlaceholder: string;
@@ -37,6 +37,7 @@ export default function HomeView({
   latestAnnouncement,
   hours,
   doctors,
+  services,
   schedulesLastUpdated,
   announcementsLastUpdated,
   layoutPlaceholder,
@@ -44,6 +45,7 @@ export default function HomeView({
 }: Props) {
   const announcementsHref = `${base}announcements/`;
   const directoryHref = `${base}directory/`;
+  const servicesHref = `${base}services/`;
 
   return (
     <AppThemeProvider>
@@ -163,6 +165,25 @@ export default function HomeView({
               </Typography>
               <Typography component="span" variant="caption" color="text.secondary" sx={{ display: 'block' }}>
                 Placeholder shown below
+              </Typography>
+            </CardActionArea>
+          </Card>
+
+          <Card variant="outlined" sx={{ borderRadius: 2 }}>
+            <CardActionArea href={servicesHref} sx={{ p: 2.5, display: 'block' }}>
+              <Typography
+                component="span"
+                variant="overline"
+                color="primary.dark"
+                sx={{ display: 'flex', alignItems: 'center', gap: 0.5, fontWeight: 700 }}
+              >
+                <MedicalServicesIcon sx={{ fontSize: 14 }} /> Health services
+              </Typography>
+              <Typography component="span" sx={{ display: 'block', fontWeight: 600, mt: 0.5 }}>
+                {services.services.length} services in {services.categories.length} categories
+              </Typography>
+              <Typography component="span" variant="caption" color="text.secondary" sx={{ display: 'block' }}>
+                Browse certificates, permits, clinical care, and more
               </Typography>
             </CardActionArea>
           </Card>

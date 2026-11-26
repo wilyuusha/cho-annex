@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCategoryView from '../../components/mui/views/ServiceCategoryView';
+import servicesData from '../../data/services.json';
+import site from '../../data/site.json';
+import type { ServicesData } from '../../data/types';
+import type { SiteInfo } from '../../components/mui/types';
+
+const services = servicesData as ServicesData;
+
+export function getStaticPaths() {
+  const data = servicesData as ServicesData;
+  return data.categories.map((category) => ({
+    params: { category: category.id },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+---
+
+<BaseLayout
+  title={`${category.label} | Services`}
+  description={`${category.label} offered at the City Health Office Annex in Valencia City, Bukidnon.`}
+>
+  <ServiceCategoryView
+    services={services}
+    category={category}
+    site={site as SiteInfo}
+    base={import.meta.env.BASE_URL}
+  />
+</BaseLayout>
