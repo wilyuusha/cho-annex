@@ -30,7 +30,7 @@ export default function HeroCarousel({ images }: Props) {
           inset: 0,
           zIndex: 2,
           backgroundImage:
-            'radial-gradient(rgba(46, 125, 50, 0.12) 1px, transparent 1px), linear-gradient(rgba(38, 50, 56, 0.18), rgba(38, 50, 56, 0.18))',
+            'radial-gradient(rgba(46, 125, 50, 0.2) 1px, transparent 1px), linear-gradient(rgba(38, 50, 56, 0.18), rgba(38, 50, 56, 0.18))',
           backgroundSize: '24px 24px, 100% 100%',
         }}
       />

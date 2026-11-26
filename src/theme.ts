@@ -75,6 +75,11 @@ export const choTheme = createTheme({
       styleOverrides: {
         body: {
           fontVariantNumeric: 'tabular-nums',
+          backgroundImage: 'radial-gradient(rgba(46, 125, 50, 0.1) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+          '@media print': {
+            backgroundImage: 'none',
+          },
         },
         'a:focus-visible, button:focus-visible': {
           outline: '2px solid #f9a825',
