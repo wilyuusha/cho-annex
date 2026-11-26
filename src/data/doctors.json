@@ -45,7 +45,7 @@
       }
     },
     {
-      "name": "Dr. Anito S. Rondina, MD",
+      "name": "Dr. Anito S. Rondina",
       "assignments": {
         "monday": ["OPD"],
         "tuesday": [],
@@ -55,7 +55,7 @@
       }
     },
     {
-      "name": "Dr. Beryl Joshua F. Borja, RN, MD",
+      "name": "Dr. Beryl Joshua F. Borja, RN",
       "assignments": {
         "monday": ["OPD"],
         "tuesday": [],
@@ -65,7 +65,7 @@
       }
     },
     {
-      "name": "Dr. Annie Vienna Faye L. Ocho, MD",
+      "name": "Dr. Annie Vienna Faye L. Ocho",
       "assignments": {
         "monday": ["OPD"],
         "tuesday": ["OPD"],

@@ -49,7 +49,10 @@ export default function DoctorsView({ doctors, site, placeholderImage }: Props) 
           />
           <CardGrid>
             {doctors.doctors.map((doctor) => (
-              <Card key={doctor.name} sx={{ maxWidth: 345, borderRadius: 2, height: '100%' }}>
+              <Card
+                key={doctor.name}
+                sx={{ width: '100%', maxWidth: { xs: 'none', sm: 345 }, borderRadius: 2, height: '100%' }}
+              >
                 <CardActionArea
                   component="div"
                   sx={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'stretch' }}
