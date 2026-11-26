@@ -1,99 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import EmptyState from '../components/EmptyState.astro';
-import EntryCard from '../components/EntryCard.astro';
-import Icon from '../components/Icon.astro';
-import LastUpdated from '../components/LastUpdated.astro';
+import SchedulesView from '../components/mui/views/SchedulesView';
 import schedulesData from '../data/schedules.json';
 import type { SchedulesData } from '../data/types';
 
 const schedules = schedulesData as SchedulesData;
-
-const sections = [
-  {
-    key: 'regularHours',
-    title: 'Operating hours',
-    description: 'Regular office hours.',
-    emptyTitle: 'No verified hours published yet',
-    emptyMessage: 'Regular operating hours will appear here after they are confirmed.',
-  },
-  {
-    key: 'abtc',
-    title: 'Animal Bite Treatment Center (ABTC) Schedule',
-    description: 'Regular Animal Bite Treatment Center (ABTC) schedule.',
-    emptyTitle: 'No Animal Bite Treatment Center (ABTC) schedule published yet',
-    emptyMessage: 'Verified Animal Bite Treatment Center (ABTC) dates and times will appear here.',
-  },
-  {
-    key: 'yakap',
-    title: 'YAKAP activities',
-    description: 'Scheduled YAKAP activities.',
-    emptyTitle: 'No YAKAP activities published yet',
-    emptyMessage: 'Verified YAKAP activity dates will appear here.',
-  },
-  {
-    key: 'serviceAvailability',
-    title: 'Service availability',
-    description: 'When regular services are available.',
-    emptyTitle: 'No service availability published yet',
-    emptyMessage: 'Verified service days and times will appear here.',
-  },
-] as const;
 ---
 
 <BaseLayout
   title="Schedules"
   description="Published schedules for the City Health Office Annex, including Animal Bite Treatment Center (ABTC), YAKAP, service availability, and operating hours."
 >
-  <div class="container">
-    <header class="page-header">
-      <p class="eyebrow">Plan your visit</p>
-      <h1>Schedules</h1>
-      <p class="lead">
-        Regular schedules and temporary activities are listed separately. Always check the latest announcements for short-term changes.
-      </p>
-      <LastUpdated updated={schedules.lastUpdated} />
-    </header>
-
-    <div class="notice" role="note">
-      <p class="notice__title"><Icon name="info" size={16} /> Regular vs. temporary</p>
-      <p>
-        The sections below describe routine schedules. Temporary changes are posted on the <a href={`${import.meta.env.BASE_URL}announcements/`}>announcements page</a>.
-      </p>
-    </div>
-
-    {
-      sections.map((section) => {
-        const entries = schedules[section.key];
-        return (
-          <section class="section" aria-labelledby={`schedule-${section.key}`}>
-            <div class="section__header">
-              <div>
-                <h2 id={`schedule-${section.key}`}>{section.title}</h2>
-                <p>{section.description}</p>
-              </div>
-            </div>
-            {entries.length > 0 ? (
-              <div class="card-grid">
-                {entries.map((entry) => (
-                  <EntryCard
-                    title={entry.title}
-                    meta={[
-                      { label: 'When', value: entry.when || 'To be confirmed' },
-                      ...(entry.effectiveDate ? [{ label: 'Effective', value: entry.effectiveDate }] : []),
-                    ]}
-                    details={entry.notes ?? []}
-                    source={entry.source}
-                    updated={entry.updated}
-                  />
-                ))}
-              </div>
-            ) : (
-              <EmptyState title={section.emptyTitle} message={section.emptyMessage} />
-            )}
-          </section>
-        );
-      })
-    }
-  </div>
+  <SchedulesView schedules={schedules} base={import.meta.env.BASE_URL} />
 </BaseLayout>

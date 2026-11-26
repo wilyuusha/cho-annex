@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "title": "Valencia City Health Office — Schedule of Doctors",
+    "source_document": "User-provided photograph shared in the CHO Annex group chat",
+    "source_document_signature": "Atty. Michael E. Escalante, MD, CGDH I, City Health Officer",
+    "transcription_status": "transcribed_from_image",
+    "public_verification_status": "not_confirmed_for_publication",
+    "schedule_effective_date": null,
+    "last_verified": null,
+    "important_notes": [
+      "This schedule was transcribed from an image shared in an internal group chat; it has not been confirmed as the current schedule or approved for public distribution.",
+      "The document is titled Valencia City Health Office (Schedule of Doctors). It does not explicitly establish that every listed assignment takes place at the German Annex.",
+      "The image lists weekday assignments but does not specify consultation hours.",
+      "Do not present this schedule as current public information until an authorized CHO representative confirms it."
+    ]
+  },
+  "doctors": [
+    {
+      "id": "escalante",
+      "name_as_printed": "Dr. Escalante",
+      "full_name": "Michael E. Escalante",
+      "display_name": "Atty. Michael E. Escalante, MD, CGDH I",
+      "credentials": [
+        "MD",
+        "CGDH I"
+      ],
+      "professional_title": "City Health Officer",
+      "name_verification": "publicly_identified",
+      "assignments": {
+        "monday": [
+          "Medicolegal"
+        ],
+        "tuesday": [],
+        "wednesday": [],
+        "thursday": [],
+        "friday": []
+      }
+    },
+    {
+      "id": "lizardo-ponay",
+      "name_as_printed": "Dr. Lizardo-Ponay",
+      "full_name": null,
+      "display_name": "Dr. Alyanna Mae Lizardo-Ponay",
+      "credentials": [],
+      "professional_title": null,
+      "name_verification": "surname_only_in_source_document",
+      "assignments": {
+        "monday": [
+          "OPD",
+          "BJMP once a month"
+        ],
+        "tuesday": [
+          "PK",
+          "Tuyok Barangay"
+        ],
+        "wednesday": [
+          "Medicolegal",
+          "Bloodletting (sub)"
+        ],
+        "thursday": [
+          "OPD"
+        ],
+        "friday": [
+          "PK"
+        ]
+      }
+    },
+    {
+      "id": "flores",
+      "name_as_printed": "Dr. Flores",
+      "full_name": "Juniver G. Flores",
+      "display_name": "Dr. Juniver G. Flores, EMT, MPH",
+      "credentials": [
+        "EMT",
+        "MPH"
+      ],
+      "professional_title": "Head, Infectious Disease Division (identified in public CHO announcement)",
+      "name_verification": "publicly_identified",
+      "assignments": {
+        "monday": [
+          "ABTC"
+        ],
+        "tuesday": [
+          "ABTC"
+        ],
+        "wednesday": [
+          "OPD",
+          "CV-HASH"
+        ],
+        "thursday": [
+          "Medicolegal"
+        ],
+        "friday": [
+          "ABTC"
+        ]
+      }
+    },
+    {
+      "id": "ricare",
+      "name_as_printed": "Dr. Ricare",
+      "full_name": "Mary Claire Ida B. Ricare-Rabago",
+      "display_name": "Dr. Mary Claire Ida B. Ricare-Rabago, RN",
+      "credentials": [
+        "RN"
+      ],
+      "professional_title": "City Health Officer (identified in public CHO announcement)",
+      "name_verification": "publicly_identified",
+      "assignments": {
+        "monday": [
+          "OPD"
+        ],
+        "tuesday": [
+          "Medicolegal"
+        ],
+        "wednesday": [
+          "Bloodletting"
+        ],
+        "thursday": [
+          "OPD"
+        ],
+        "friday": [
+          "PK"
+        ]
+      }
+    },
+    {
+      "id": "isidro",
+      "name_as_printed": "Dr. Isidro",
+      "full_name": null,
+      "display_name": "Dr. Emmy Lou A. Isidro",
+      "credentials": [],
+      "professional_title": null,
+      "name_verification": "surname_only_in_source_document",
+      "assignments": {
+        "monday": [
+          "ABTC"
+        ],
+        "tuesday": [
+          "ABTC"
+        ],
+        "wednesday": [
+          "OPD"
+        ],
+        "thursday": [
+          "OPD",
+          "TB-DOTS",
+          "Medicolegal (sub)"
+        ],
+        "friday": [
+          "ABTC"
+        ]
+      }
+    },
+    {
+      "id": "rondina",
+      "name_as_printed": "Dr. Rondina",
+      "full_name": "Anito S. Rondina Jr.",
+      "display_name": "Dr. Anito S. Rondina, MD",
+      "credentials": [
+        "MD"
+      ],
+      "professional_title": null,
+      "name_verification": "publicly_identified",
+      "assignments": {
+        "monday": [
+          "OPD",
+          "BJMP once a month"
+        ],
+        "tuesday": [
+          "PK",
+          "Tuyok Barangay"
+        ],
+        "wednesday": [
+          "OPD",
+          "Medicolegal (sub)"
+        ],
+        "thursday": [
+          "OPD",
+          "Minor OR"
+        ],
+        "friday": [
+          "OPD"
+        ]
+      }
+    },
+    {
+      "id": "borja",
+      "name_as_printed": "Dr. Borja",
+      "full_name": "Beryl Joshua F. Borja",
+      "display_name": "Dr. Beryl Joshua F. Borja, RN, MD",
+      "credentials": [],
+      "professional_title": null,
+      "name_verification": "surname_only_in_source_document",
+      "assignments": {
+        "monday": [
+          "OPD"
+        ],
+        "tuesday": [
+          "Tuyok Barangay"
+        ],
+        "wednesday": [
+          "OPD"
+        ],
+        "thursday": [
+          "Mental Health"
+        ],
+        "friday": [
+          "Medicolegal"
+        ]
+      }
+    },
+    {
+      "id": "ocho",
+      "name_as_printed": "Dr. Ocho",
+      "full_name": "Annie Vienna Faye L. Ocho",
+      "display_name": "Dr. Annie Vienna Faye L. Ocho, MD",
+      "credentials": [],
+      "professional_title": null,
+      "name_verification": "surname_only_in_source_document",
+      "assignments": {
+        "monday": [
+          "OPD"
+        ],
+        "tuesday": [
+          "OPD",
+          "Prenatal"
+        ],
+        "wednesday": [
+          "OPD"
+        ],
+        "thursday": [
+          "OPD",
+          "Prenatal"
+        ],
+        "friday": [
+          "OPD"
+        ]
+      }
+    }
+  ],
+  "legend": {
+    "OPD": "Outpatient Department",
+    "ABTC": "Animal Bite Treatment Center",
+    "PK": "PuroKalusugan (abbreviation as printed; confirm official expansion used by CHO)",
+    "BJMP": "Bureau of Jail Management and Penology",
+    "CV-HASH": "City of Valencia HIV and AIDS Support House",
+    "TB-DOTS": "Tuberculosis Directly Observed Treatment, Short-course",
+    "sub": "The source document uses this suffix; its intended meaning should be confirmed by CHO before public display.",
+    "Tuyok Barangay": "Transcribed as printed; confirm whether this refers to a specific barangay outreach/rotation."
+  },
+  "research": {
+    "public_sources": [
+      {
+        "url": "https://www.findglocal.com/PH/Valencia/102898569445128/Valencia-City-Health-Office",
+        "description": "Reproduced Valencia City Health Office public updates. Identifies Dr. Juniver G. Flores, EMT, MPH; Dr. Mary Claire Ida B. Ricare-Rabago, RN; and Dr. Anito S. Rondina, MD in CHO-related posts."
+      },
+      {
+        "url": "https://www.govserv.org/PH/Valencia/102898569445128/Valencia-City-Health-Office",
+        "description": "Reproduced Valencia City Health Office public updates. Identifies Atty. Michael E. Escalante, MD, CGDH I as City Health Officer."
+      },
+      {
+        "url": "https://cmnewswatch.com/valencia-celebrates-international-aids-candlelight-memorial-2023/",
+        "description": "2023 public report naming Dr. Mary Claire Ida B. Ricare and Dr. Juniver G. Flores in connection with the Valencia City Health Office."
+      }
+    ],
+    "research_limitations": [
+      "Public web results did not establish the full names and professional credentials of all eight doctors.",
+      "The credentials shown here are only those explicitly supported by the located public sources; no additional degrees or licenses have been inferred.",
+      "Publicly identifying a person as a CHO employee or physician does not establish that the pictured weekly assignment sheet is current."
+    ]
+  }
+}

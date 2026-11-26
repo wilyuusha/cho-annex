@@ -2,7 +2,7 @@
 
 All public-facing schedules, services, visits, directory details, and announcements live here as JSON. Presentation stays in `src/components`, `src/layouts`, and `src/pages`.
 
-Initial content was curated from `src/scrape/cho-annex-public-data.json`. Only public notices, directory listings, and completed public activities were carried over. Records marked `historical_reference_only`, or whose own notes say they are not current, were excluded. Every published entry keeps a `source` link and a date; file-level `lastUpdated` values use the scrape generation date `2026-11-25`.
+Initial content was curated from `src/scrape/cho-annex-public-data.json`. Only public notices, directory listings, and completed public activities were carried over. Records marked `historical_reference_only`, or whose own notes say they are not current, were excluded. Every published entry keeps a `source` link and a date; file-level `lastUpdated` values use the scrape generation date `2026-11-26`.
 
 Do not add unverified times, requirements, room assignments, or advisories. Set dates as ISO strings (`YYYY-MM-DD`).
 
@@ -32,7 +32,11 @@ Entry shape:
 }
 ```
 
-`effectiveDate` and `updated` may be `null` when not applicable. The Animal Bite Treatment Center (ABTC) days were confirmed by the site maintainer on `2026-11-25`; daily clinic hours have not been published.
+`effectiveDate` and `updated` may be `null` when not applicable. The Animal Bite Treatment Center (ABTC) days were confirmed by the site maintainer on `2026-11-26`; daily clinic hours have not been published.
+
+## `doctors.json`
+
+Curated from `src/scrape/cho-annex-doctor-schedule.json`. The site maintainer confirmed the transcribed assignments and names on `2026-11-26`. Only OPD assignments are published: `doctors` holds each doctor's `name` and weekday `assignments`, with non-OPD assignments and doctors who have no OPD days removed. The source lists weekday assignments only, so no consultation hours are published.
 
 ## `visits.json`
 

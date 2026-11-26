@@ -1,0 +1,78 @@
+{
+  "title": "OPD schedule of doctors",
+  "lastUpdated": "2026-11-26",
+  "sourceNote": "OPD days confirmed by the site maintainer on 26 November 2026. The source schedule lists weekday assignments but does not specify consultation hours; only OPD days are published here.",
+  "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  "doctors": [
+    {
+      "name": "Dr. Alyanna Mae Lizardo-Ponay",
+      "assignments": {
+        "monday": ["OPD"],
+        "tuesday": [],
+        "wednesday": [],
+        "thursday": ["OPD"],
+        "friday": []
+      }
+    },
+    {
+      "name": "Dr. Juniver G. Flores, EMT, MPH",
+      "assignments": {
+        "monday": [],
+        "tuesday": [],
+        "wednesday": ["OPD"],
+        "thursday": [],
+        "friday": []
+      }
+    },
+    {
+      "name": "Dr. Mary Claire Ida B. Ricare-Rabago, RN",
+      "assignments": {
+        "monday": ["OPD"],
+        "tuesday": [],
+        "wednesday": [],
+        "thursday": ["OPD"],
+        "friday": []
+      }
+    },
+    {
+      "name": "Dr. Emmy Lou A. Isidro",
+      "assignments": {
+        "monday": [],
+        "tuesday": [],
+        "wednesday": ["OPD"],
+        "thursday": ["OPD"],
+        "friday": []
+      }
+    },
+    {
+      "name": "Dr. Anito S. Rondina, MD",
+      "assignments": {
+        "monday": ["OPD"],
+        "tuesday": [],
+        "wednesday": ["OPD"],
+        "thursday": ["OPD"],
+        "friday": ["OPD"]
+      }
+    },
+    {
+      "name": "Dr. Beryl Joshua F. Borja, RN, MD",
+      "assignments": {
+        "monday": ["OPD"],
+        "tuesday": [],
+        "wednesday": ["OPD"],
+        "thursday": [],
+        "friday": []
+      }
+    },
+    {
+      "name": "Dr. Annie Vienna Faye L. Ocho, MD",
+      "assignments": {
+        "monday": ["OPD"],
+        "tuesday": ["OPD"],
+        "wednesday": ["OPD"],
+        "thursday": ["OPD"],
+        "friday": ["OPD"]
+      }
+    }
+  ]
+}

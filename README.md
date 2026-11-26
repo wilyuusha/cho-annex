@@ -23,14 +23,15 @@ npm run check     # Astro/TypeScript checks
 
 Content lives in [`src/data`](./src/data/README.md) as JSON. Initial entries were curated from [`src/scrape/cho-annex-public-data.json`](./src/scrape/cho-annex-public-data.json); each published entry keeps its source link and date. Records the scrape marks as historical or not current were excluded. Never publish unverified schedules, requirements, room assignments, or advisories, and set the matching `lastUpdated` date when information changes.
 
-The City Health Office and Valencia City LGU logos in `src/images/` are rendered through `src/components/LogoPair.astro` in the header and footer.
+The City Health Office and Valencia City LGU logos in `src/images/` are optimized by `src/components/AppShell.astro` and rendered by the MUI header and footer.
 
 Pages, layout, and styling live in:
 
-- `src/pages/` — one page per core section plus `404`. The Visits page is retained but currently hidden from navigation and the home page.
-- `src/layouts/BaseLayout.astro` — shared page shell.
-- `src/components/` — reusable header, footer, cards, notices, and date display.
-- `src/styles/global.css` — Material Design–inspired tokens and shared styles.
+- `src/pages/` — thin Astro pages that load JSON data and hand it to React views.
+- `src/layouts/BaseLayout.astro` — shared HTML shell (document head, fonts, page title).
+- `src/components/mui/` — MUI React components: theme provider, app shell, header/footer, cards, tables, notices, and date display.
+- `src/components/mui/views/` — one React view per page.
+- `src/theme.ts` — the MUI theme with the CHO Annex brand tokens.
 
 ## GitHub Pages
 

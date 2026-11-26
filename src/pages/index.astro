@@ -1,15 +1,12 @@
 ---
 import { getImage } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import EmptyState from '../components/EmptyState.astro';
-import EntryCard from '../components/EntryCard.astro';
-import Icon from '../components/Icon.astro';
-import LastUpdated from '../components/LastUpdated.astro';
-import ScheduleTable from '../components/ScheduleTable.astro';
+import HomeView from '../components/mui/views/HomeView';
 import announcementsData from '../data/announcements.json';
+import doctorsData from '../data/doctors.json';
 import schedulesData from '../data/schedules.json';
 import site from '../data/site.json';
-import type { AnnouncementsData, SchedulesData } from '../data/types';
+import type { AnnouncementsData, DoctorsData, SchedulesData } from '../data/types';
 import heroCarousel1 from '../images/hero-carousel-img1.jpeg';
 import heroCarousel2 from '../images/hero-carousel-img2.jpeg';
 import heroCarousel3 from '../images/hero-carousel-img3.jpeg';
@@ -33,175 +30,39 @@ const heroSlides = await Promise.all(
   heroImages.map((image) => getImage({ src: image, width: 1280 })),
 );
 const heroImageUrls = heroSlides.map((slide) => slide.src);
-const visibleTiles = 4;
-const windowCount = Math.max(1, heroImages.length - visibleTiles + 1);
 
 const announcements = announcementsData as AnnouncementsData;
+const doctors = doctorsData as DoctorsData;
 const schedules = schedulesData as SchedulesData;
 
-const base = import.meta.env.BASE_URL;
-const hrefFor = (slug: string) => `${base}${slug.replace(/^\//, '')}/`;
-
-const latestAnnouncements = [...announcements.entries]
-  .sort((a, b) => b.published.localeCompare(a.published))
-  .slice(0, 3);
-
-const latestAnnouncement = latestAnnouncements[0];
+const latestAnnouncement = [...announcements.entries]
+  .sort((a, b) => b.published.localeCompare(a.published))[0];
 
 const homeHours = [
   ...schedules.regularHours.map((entry) => ({ entry, badge: 'CHO Annex' })),
   ...schedules.abtc.map((entry) => ({ entry, badge: 'ABTC' })),
-];
+].map(({ entry, badge }) => ({
+  title: entry.title,
+  when: entry.when || 'To be confirmed',
+  notes: entry.notes ?? [],
+  badge,
+  source: entry.source,
+  updated: entry.updated,
+}));
 ---
 
 <BaseLayout title="Home">
-  <section class="hero" aria-labelledby="hero-heading">
-    <div
-      class="hero__media"
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="City Health Office photos"
-      data-carousel
-      data-images={JSON.stringify(heroImageUrls)}
-    >
-      <div class="hero__mosaic">
-        {
-          heroSlides.slice(0, visibleTiles).map((slide, index) => (
-            <div class="hero__tile" data-tile>
-              <img
-                class="hero__image"
-                src={slide.src}
-                alt=""
-                loading={index === 0 ? 'eager' : 'lazy'}
-              />
-            </div>
-          ))
-        }
-      </div>
-      <div class="hero__carousel-controls">
-        <button class="hero__arrow" type="button" data-carousel-prev aria-label="Previous photos">
-          <Icon name="chevronLeft" size={18} />
-        </button>
-        <span class="hero__counter" data-carousel-counter aria-live="polite">1–4 / {heroImages.length}</span>
-        <button class="hero__arrow" type="button" data-carousel-next aria-label="Next photos">
-          <Icon name="chevronRight" size={18} />
-        </button>
-      </div>
-      <div class="hero__dots" role="group" aria-label="Select photo group">
-        {
-          Array.from({ length: windowCount }, (_, index) => (
-            <button
-              class="hero__dot"
-              type="button"
-              data-carousel-dot={index}
-              aria-label={`Show photos ${index + 1} to ${index + visibleTiles}`}
-              aria-current={index === 0 ? 'true' : 'false'}
-            />
-          ))
-        }
-      </div>
-    </div>
-    <div class="hero__panel">
-      <div class="hero__body">
-        <p class="eyebrow">Introduction</p>
-        <h1 id="hero-heading">{site.shortName} <span class="hero__unit">{site.unit}</span></h1>
-        <p class="lead">{site.description}</p>
-        <div class="hero__actions">
-          <a class="button button--quiet" href={hrefFor('announcements')}><Icon name="megaphone" size={16} /> Latest advisory</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="container">
-    <section class="quick-facts" aria-label="Key information">
-      <a class="fact" href={hrefFor('announcements')}>
-        <span class="fact__label"><Icon name="megaphone" size={14} /> Latest announcement</span>
-        <span class="fact__value">{latestAnnouncement?.title ?? 'No announcements yet'}</span>
-        <span class="fact__meta">{latestAnnouncement ? `Published ${latestAnnouncement.published}` : 'Pending verification'}</span>
-      </a>
-      <a class="fact" href={hrefFor('directory')}>
-        <span class="fact__label"><Icon name="map" size={14} /> Building layout</span>
-        <span class="fact__value">Directory coming soon</span>
-        <span class="fact__meta">Placeholder shown below</span>
-      </a>
-    </section>
-
-    <section class="section" aria-labelledby="home-hours-heading">
-      <div class="section__header">
-        <div>
-          <h2 id="home-hours-heading">Operating hours</h2>
-          <p>Regular office days.</p>
-        </div>
-        <LastUpdated updated={schedules.lastUpdated} />
-      </div>
-      {
-        homeHours.length > 0 ? (
-          <ScheduleTable
-            rows={homeHours.map(({ entry, badge }) => ({
-              title: entry.title,
-              when: entry.when || 'To be confirmed',
-              notes: entry.notes ?? [],
-              badge,
-              source: entry.source,
-              updated: entry.updated,
-            }))}
-          />
-        ) : (
-          <EmptyState
-            title="No verified hours published yet"
-            message="Regular operating hours will appear here after they are confirmed."
-          />
-        )
-      }
-    </section>
-
-    <section class="section" aria-labelledby="home-updates-heading">
-      <div class="section__header">
-        <div>
-          <h2 id="home-updates-heading">Latest announcement</h2>
-          <p>Advisories and temporary changes.</p>
-        </div>
-        <LastUpdated updated={announcements.lastUpdated} />
-      </div>
-      {
-        latestAnnouncement ? (
-          <EntryCard
-            title={latestAnnouncement.title}
-            badge={latestAnnouncement.category}
-            meta={[
-              { label: 'Published', value: latestAnnouncement.published },
-              ...(latestAnnouncement.until ? [{ label: 'Until', value: latestAnnouncement.until }] : []),
-            ]}
-            details={[latestAnnouncement.body, ...(latestAnnouncement.notes ?? [])]}
-            source={latestAnnouncement.source}
-            updated={latestAnnouncement.updated}
-          />
-        ) : (
-          <EmptyState
-            title="No announcements published yet"
-            message="Verified advisories and temporary changes will appear here once available."
-          />
-        )
-      }
-    </section>
-
-    <section class="section split" aria-labelledby="layout-preview-heading">
-      <div>
-        <h2 id="layout-preview-heading"><Icon name="pin" size={20} /> Finding your way</h2>
-        <p class="lead">A verified room-by-room layout is being prepared. The placeholder below is not the final directory.</p>
-        <p><a href={hrefFor('directory')}>Open the directory</a></p>
-      </div>
-      <figure class="split__media">
-        <img
-          src={layoutPlaceholder.src}
-          alt="Placeholder floor plan with unlabeled rooms"
-          width="1200"
-          height="900"
-        />
-      </figure>
-    </section>
-  </div>
+  <HomeView
+    site={site}
+    heroImages={heroImageUrls}
+    latestAnnouncement={latestAnnouncement ?? null}
+    hours={homeHours}
+    doctors={doctors}
+    schedulesLastUpdated={schedules.lastUpdated}
+    announcementsLastUpdated={announcements.lastUpdated}
+    layoutPlaceholder={layoutPlaceholder.src}
+    base={import.meta.env.BASE_URL}
+  />
 </BaseLayout>
 
 <script>

@@ -1,8 +1,6 @@
 ---
-import SiteHeader from '../components/SiteHeader.astro';
-import SiteFooter from '../components/SiteFooter.astro';
+import AppShell from '../components/AppShell.astro';
 import site from '../data/site.json';
-import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -29,11 +27,8 @@ const pageTitle = title === 'Home' ? site.name : `${title} | ${site.name}`;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <SiteHeader />
-    <main id="main-content" class="site-main">
+    <AppShell>
       <slot />
-    </main>
-    <SiteFooter />
+    </AppShell>
   </body>
 </html>

@@ -1,9 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import EmptyState from '../components/EmptyState.astro';
-import EntryCard from '../components/EntryCard.astro';
-import Icon from '../components/Icon.astro';
-import LastUpdated from '../components/LastUpdated.astro';
+import DirectoryView from '../components/mui/views/DirectoryView';
 import directoryData from '../data/directory.json';
 import type { DirectoryData } from '../data/types';
 import layoutPlaceholder from '../images/directory-layout-placeholder.svg';
@@ -15,74 +12,5 @@ const directory = directoryData as DirectoryData;
   title="Directory"
   description="Building layout, room locations, and visitor directions for the City Health Office Annex."
 >
-  <div class="container">
-    <header class="page-header">
-      <p class="eyebrow">Find your way</p>
-      <h1>Directory</h1>
-      <p class="lead">
-        Building layout, departments, room locations, and visitor directions. Room assignments may change.
-      </p>
-      <LastUpdated updated={directory.lastUpdated} />
-    </header>
-
-    {
-      directory.visitorNotes.length > 0 && (
-        <div class="notice" role="note">
-          <p class="notice__title"><Icon name="pin" size={16} /> Visitor directions</p>
-          <ul>
-            {directory.visitorNotes.map((note) => <li>{note}</li>)}
-          </ul>
-        </div>
-      )
-    }
-
-    <section class="section split" aria-labelledby="layout-heading">
-      <div>
-        <h2 id="layout-heading">Building layout</h2>
-        <p class="lead">The verified room-by-room layout is being prepared. This placeholder is not the final directory.</p>
-      </div>
-      <figure class="split__media">
-        <img
-          src={layoutPlaceholder.src}
-          alt="Placeholder floor plan with unlabeled rooms"
-          width="1200"
-          height="900"
-        />
-      </figure>
-    </section>
-
-    <section class="section" aria-labelledby="rooms-heading">
-      <div class="section__header">
-        <div>
-          <h2 id="rooms-heading">Rooms and departments</h2>
-        </div>
-      </div>
-      {
-        directory.rooms.length > 0 ? (
-          <div class="card-grid">
-            {directory.rooms.map((room) => (
-              <EntryCard
-                title={room.name}
-                meta={[
-                  ...(room.floor ? [{ label: 'Floor', value: room.floor }] : []),
-                  ...(room.location ? [{ label: 'Location', value: room.location }] : []),
-                ]}
-                details={[
-                  ...(room.services ?? []).map((service) => `Service: ${service}`),
-                  ...(room.notes ?? []),
-                ]}
-                source={room.source}
-                updated={room.updated}
-              />
-            ))}
-          </div>
-        ) : (
-          <EmptyState
-            title="No room information published yet"
-            message="Verified room locations and department details will appear here once confirmed."
-          />
-        )
-      }
-    </section>
-  </div>
+  <DirectoryView directory={directory} layoutPlaceholder={layoutPlaceholder.src} />
 </BaseLayout>

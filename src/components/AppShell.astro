@@ -1,0 +1,24 @@
+---
+import { getImage } from 'astro:assets';
+import AppShell from './mui/AppShell';
+import choLogo from '../images/cho_logo_logo.png';
+import lguLogo from '../images/lgu_valencia_logo.png';
+import site from '../data/site.json';
+import type { SiteInfo } from './mui/types';
+
+const base = import.meta.env.BASE_URL;
+const basePath = base.replace(/\/$/, '');
+const currentPath = Astro.url.pathname.replace(basePath, '').replace(/\/+$/, '') || '/';
+
+const cho = await getImage({ src: choLogo, width: 120 });
+const lgu = await getImage({ src: lguLogo, width: 120 });
+
+const logos = {
+  cho: { src: cho.src, width: cho.attributes.width, height: cho.attributes.height },
+  lgu: { src: lgu.src, width: lgu.attributes.width, height: lgu.attributes.height },
+};
+---
+
+<AppShell site={site as SiteInfo} logos={logos} currentPath={currentPath} base={base}>
+  <slot />
+</AppShell>

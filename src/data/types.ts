@@ -22,6 +22,19 @@ export interface SchedulesData {
   serviceAvailability: ScheduleEntry[];
 }
 
+export interface DoctorEntry {
+  name: string;
+  assignments: Record<string, string[]>;
+}
+
+export interface DoctorsData {
+  title: string;
+  lastUpdated: string | null;
+  sourceNote: string;
+  days: string[];
+  doctors: DoctorEntry[];
+}
+
 export interface VisitEntry {
   title: string;
   barangay: string;
